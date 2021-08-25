@@ -1379,35 +1379,35 @@
       },
       "Applications/1.0.0": {
         "dependencies": {
-          "Models": "1.0.0"
+          "Domains": "1.0.0"
         },
         "runtime": {
           "Applications.dll": {}
         },
         "compile": {
           "Applications.dll": {}
+        }
+      },
+      "Domains/1.0.0": {
+        "runtime": {
+          "Domains.dll": {}
+        },
+        "compile": {
+          "Domains.dll": {}
         }
       },
       "Infrastructures/1.0.0": {
         "dependencies": {
           "Applications": "1.0.0",
+          "Domains": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.9",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9",
-          "Models": "1.0.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9"
         },
         "runtime": {
           "Infrastructures.dll": {}
         },
         "compile": {
           "Infrastructures.dll": {}
-        }
-      },
-      "Models/1.0.0": {
-        "runtime": {
-          "Models.dll": {}
-        },
-        "compile": {
-          "Models.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -3823,12 +3823,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Infrastructures/1.0.0": {
+    "Domains/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Models/1.0.0": {
+    "Infrastructures/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

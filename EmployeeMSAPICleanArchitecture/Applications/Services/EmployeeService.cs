@@ -28,6 +28,11 @@ namespace Applications.Services
             return employeeItem;
         }
 
+        public string DeleteEmployee(Guid id)
+        {
+            return _iEmployee.DeleteEmployee(id);
+        }
+
         public EmployeeViewModel GetEmployee()
         {
 
@@ -35,6 +40,28 @@ namespace Applications.Services
             {
                 employees = _iEmployee.GetEmployee()
             };
+        }
+
+        public EmployeeItem GetOneEmployee(Guid id)
+        {
+            EmployeeItem employeeItem = new EmployeeItem();
+            Employee employee = new Employee();
+            employee = _iEmployee.GetOneEmployee(id);
+            employeeItem.Name = employee.Name;
+            employeeItem.Email = employee.Email;
+            employeeItem.Phone = employee.Phone;
+            return employeeItem;
+        }
+
+        public EmployeeItem UpdateEmployee(Guid id, EmployeeItem employeeItem)
+        {
+            Employee employee = new Employee();
+            employee.Name = employeeItem.Name;
+            employee.Phone = employeeItem.Phone;
+            employee.Email = employeeItem.Email;
+
+            _iEmployee.UpdateEmployee(id, employee);
+            return employeeItem;
         }
     }
 }

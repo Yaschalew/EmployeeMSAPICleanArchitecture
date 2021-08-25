@@ -1524,7 +1524,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Models": "1.0.0"
+          "Domains": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Applications.dll": {}
@@ -1533,14 +1533,14 @@
           "bin/placeholder/Applications.dll": {}
         }
       },
-      "Models/1.0.0": {
+      "Domains/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "compile": {
-          "bin/placeholder/Models.dll": {}
+          "bin/placeholder/Domains.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Models.dll": {}
+          "bin/placeholder/Domains.dll": {}
         }
       }
     }
@@ -5816,19 +5816,19 @@
       "path": "../Applications/Applications.csproj",
       "msbuildProject": "../Applications/Applications.csproj"
     },
-    "Models/1.0.0": {
+    "Domains/1.0.0": {
       "type": "project",
-      "path": "../Models/Models.csproj",
-      "msbuildProject": "../Models/Models.csproj"
+      "path": "../Models/Domains.csproj",
+      "msbuildProject": "../Models/Domains.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Applications >= 1.0.0",
+      "Domains >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.9",
-      "Microsoft.EntityFrameworkCore.Tools >= 5.0.9",
-      "Models >= 1.0.0"
+      "Microsoft.EntityFrameworkCore.Tools >= 5.0.9"
     ]
   },
   "packageFolders": {
@@ -5838,11 +5838,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\Infrastructures\\Infrastructures.csproj",
+      "projectUniqueName": "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Infrastructures\\Infrastructures.csproj",
       "projectName": "Infrastructures",
-      "projectPath": "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\Infrastructures\\Infrastructures.csproj",
+      "projectPath": "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Infrastructures\\Infrastructures.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\Infrastructures\\obj\\",
+      "outputPath": "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Infrastructures\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5863,11 +5863,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj": {
-              "projectPath": "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj"
+            "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj": {
+              "projectPath": "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj"
             },
-            "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\Models\\Models.csproj": {
-              "projectPath": "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\Models\\Models.csproj"
+            "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj": {
+              "projectPath": "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj"
             }
           }
         }

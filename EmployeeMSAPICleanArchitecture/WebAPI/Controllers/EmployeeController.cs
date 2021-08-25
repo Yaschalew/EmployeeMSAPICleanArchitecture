@@ -28,5 +28,20 @@ namespace WebAPI.Controllers
         {
             return _iemployeeService.GetEmployee();
         }
+        [HttpPatch]
+        public EmployeeItem UpdateEmployee(Guid id, EmployeeItem employeeItem)
+        {
+            return _iemployeeService.UpdateEmployee(id, employeeItem);
+        }
+        [HttpDelete("{id}")]
+        public string DeleteEmployee(Guid id)
+        {
+            return _iemployeeService.DeleteEmployee(id);
+        }
+        [HttpGet("{id}")]
+        public EmployeeItem GetOneEmployee(Guid id)
+        {
+            return _iemployeeService.GetOneEmployee(id);
+        }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj": {}
+    "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj": {}
   },
   "projects": {
-    "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj": {
+    "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj",
+        "projectUniqueName": "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj",
         "projectName": "Applications",
-        "projectPath": "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj",
+        "projectPath": "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\Applications\\obj\\",
+        "outputPath": "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\Models\\Models.csproj": {
-                "projectPath": "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\Models\\Models.csproj"
+              "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj": {
+                "projectPath": "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj"
               }
             }
           }
@@ -66,14 +66,14 @@
         }
       }
     },
-    "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\Models\\Models.csproj": {
+    "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\Models\\Models.csproj",
-        "projectName": "Models",
-        "projectPath": "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\Models\\Models.csproj",
+        "projectUniqueName": "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj",
+        "projectName": "Domains",
+        "projectPath": "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\Models\\obj\\",
+        "outputPath": "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

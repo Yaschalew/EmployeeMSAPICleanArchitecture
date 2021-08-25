@@ -12,8 +12,8 @@ namespace Applications.Interfaces
 
         public EmployeeItem AddEmployee(EmployeeItem employee);
         public EmployeeViewModel GetEmployee();
-        //public Employee UpdateEmployee(Guid id, Employee employee);
-        //public Employee GetOneEmployee(Guid id);
-        //public string DeleteEmployee(Guid id);
+        public EmployeeItem UpdateEmployee(Guid id, EmployeeItem employee);
+        public EmployeeItem GetOneEmployee(Guid id);
+        public string DeleteEmployee(Guid id);
     }
 }

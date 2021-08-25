@@ -14,6 +14,10 @@ namespace Infrastructures.Context
         {
 
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
         public DbSet<Employee> Employees { get; set; }
     }
 }

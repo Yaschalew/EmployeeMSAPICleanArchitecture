@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d2lnIQ+cAksT0LRkSu0J3O9NVNfoE0SFCJsy2kUNSz28qW/a80eZK0P0713gDq9i1eWWKWBy/iuL8dRat1dZoQ==",
+  "dgSpecHash": "NxgIiccbsoZNhupnRd2gHRlGFUc25h0bNGEgg7RBc9UAvXVkjP39BUFCJz57zdSJVFeAoRuqW66ZGR4tCxwMYA==",
   "success": true,
-  "projectFilePath": "D:\\excellerent\\exc-code\\EmployeeMSAPICleanArchitecture\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
