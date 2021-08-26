@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Domains.Entities;
+using Microsoft.EntityFrameworkCore;
 using Models.Entities;
 using System;
 using System.Collections.Generic;
@@ -19,5 +20,6 @@ namespace Infrastructures.Context
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Education> Educations { get; set; }
     }
 }
