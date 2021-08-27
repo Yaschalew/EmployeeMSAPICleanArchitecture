@@ -28,7 +28,7 @@ namespace WebAPI.Controllers
         {
             return _iJobInformationService.GetJobInformation();
         }
-        [HttpPatch]
+        [HttpPatch("{id}")]
         public JobInformationItem UpdateJobInformation(Guid id, JobInformationItem jobInformationItem)
         {
             return _iJobInformationService.UpdateJobInformation(id, jobInformationItem);

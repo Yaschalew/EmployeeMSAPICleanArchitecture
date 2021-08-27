@@ -12,7 +12,7 @@ namespace Domains.Interface
         public Education GetOneEducation(Guid id);
         public string DeleteEducation(Guid id);
 
-
+       
 
     }
 }

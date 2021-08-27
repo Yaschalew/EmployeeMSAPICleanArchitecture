@@ -11,5 +11,6 @@ namespace Applications.Interfaces
         public EmployeeItem UpdateEmployee(Guid id, EmployeeItem employee);
         public EmployeeItem GetOneEmployee(Guid id);
         public string DeleteEmployee(Guid id);
+
     }
 }
