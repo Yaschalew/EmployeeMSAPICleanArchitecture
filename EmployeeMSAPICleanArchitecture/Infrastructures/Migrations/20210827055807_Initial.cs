@@ -36,6 +36,24 @@ namespace Infrastructures.Migrations
                 {
                     table.PrimaryKey("PK_Employees", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Experiences",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    EmployeId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Salary = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Position = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Company = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Year = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ResignReason = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Remark = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Experiences", x => x.Id);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -45,6 +63,9 @@ namespace Infrastructures.Migrations
 
             migrationBuilder.DropTable(
                 name: "Employees");
+
+            migrationBuilder.DropTable(
+                name: "Experiences");
         }
     }
 }

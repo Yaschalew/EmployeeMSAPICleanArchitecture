@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructures.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210826074344_Initial")]
+    [Migration("20210827055807_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,6 +45,38 @@ namespace Infrastructures.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Educations");
+                });
+
+            modelBuilder.Entity("Domains.Entities.Experience", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Company")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("EmployeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Position")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Remark")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ResignReason")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Salary")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Year")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Experiences");
                 });
 
             modelBuilder.Entity("Models.Entities.Employee", b =>
