@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models.Entities
 {
+
    public class Employee
     {
         public Guid Id { get;set; }
