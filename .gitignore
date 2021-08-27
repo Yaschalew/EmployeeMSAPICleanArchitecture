@@ -1,0 +1,9 @@
+EmployeeMSAPICleanArchitecture/Applications/obj/
+EmployeeMSAPICleanArchitecture/Applications/bin/
+EmployeeMSAPICleanArchitecture/Models/bin/
+EmployeeMSAPICleanArchitecture/Models/obj/
+EmployeeMSAPICleanArchitecture/Infrastructures/bin/
+EmployeeMSAPICleanArchitecture/Infrastructures/obj/
+EmployeeMSAPICleanArchitecture/WebAPI/bin/
+EmployeeMSAPICleanArchitecture/WebAPI/obj/
+EmployeeMSAPICleanArchitecture/.vs/
