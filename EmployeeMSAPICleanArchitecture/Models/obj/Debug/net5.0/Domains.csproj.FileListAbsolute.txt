@@ -10,6 +10,7 @@ D:\excellerent\exc-code\dotNet\EmployeeMSAPICleanArchitecture\EmployeeMSAPIClean
 D:\excellerent\exc-code\dotNet\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\obj\Debug\net5.0\Domains.dll
 D:\excellerent\exc-code\dotNet\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\obj\Debug\net5.0\ref\Domains.dll
 D:\excellerent\exc-code\dotNet\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\obj\Debug\net5.0\Domains.pdb
+<<<<<<< HEAD
 D:\Trainings\Boot Camp\API\CleanArchitecture\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\bin\Debug\net5.0\Domains.deps.json
 D:\Trainings\Boot Camp\API\CleanArchitecture\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\bin\Debug\net5.0\Domains.dll
 D:\Trainings\Boot Camp\API\CleanArchitecture\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\bin\Debug\net5.0\ref\Domains.dll
@@ -22,3 +23,17 @@ D:\Trainings\Boot Camp\API\CleanArchitecture\EmployeeMSAPICleanArchitecture\Empl
 D:\Trainings\Boot Camp\API\CleanArchitecture\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\obj\Debug\net5.0\Domains.dll
 D:\Trainings\Boot Camp\API\CleanArchitecture\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\obj\Debug\net5.0\ref\Domains.dll
 D:\Trainings\Boot Camp\API\CleanArchitecture\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\obj\Debug\net5.0\Domains.pdb
+=======
+D:\BootCampAug2\BootCampTrainingProjects\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\bin\Debug\net5.0\Domains.deps.json
+D:\BootCampAug2\BootCampTrainingProjects\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\bin\Debug\net5.0\Domains.dll
+D:\BootCampAug2\BootCampTrainingProjects\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\bin\Debug\net5.0\ref\Domains.dll
+D:\BootCampAug2\BootCampTrainingProjects\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\bin\Debug\net5.0\Domains.pdb
+D:\BootCampAug2\BootCampTrainingProjects\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\obj\Debug\net5.0\Domains.GeneratedMSBuildEditorConfig.editorconfig
+D:\BootCampAug2\BootCampTrainingProjects\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\obj\Debug\net5.0\Domains.AssemblyInfoInputs.cache
+D:\BootCampAug2\BootCampTrainingProjects\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\obj\Debug\net5.0\Domains.AssemblyInfo.cs
+D:\BootCampAug2\BootCampTrainingProjects\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\obj\Debug\net5.0\Domains.csproj.CoreCompileInputs.cache
+D:\BootCampAug2\BootCampTrainingProjects\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\obj\Debug\net5.0\Domains.dll
+D:\BootCampAug2\BootCampTrainingProjects\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\obj\Debug\net5.0\ref\Domains.dll
+D:\BootCampAug2\BootCampTrainingProjects\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\obj\Debug\net5.0\Domains.pdb
+D:\BootCampAug2\BootCampTrainingProjects\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\Models\obj\Debug\net5.0\Domains.csproj.AssemblyReference.cache
+>>>>>>> 43ff8873892fb2690b1e4c51875d947e732ac9a4

@@ -19,12 +19,17 @@ namespace Infrastructures.Migrations
                 .HasAnnotation("ProductVersion", "5.0.9")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+<<<<<<< HEAD
             modelBuilder.Entity("Domains.Entities.Attendance", b =>
+=======
+            modelBuilder.Entity("Domains.Entities.Education", b =>
+>>>>>>> 43ff8873892fb2690b1e4c51875d947e732ac9a4
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+<<<<<<< HEAD
                     b.Property<DateTime>("AttendanceDate")
                         .HasColumnType("datetime2");
 
@@ -32,11 +37,30 @@ namespace Infrastructures.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Remark")
+=======
+                    b.Property<string>("EmployeeId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GPA")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GraduatedYear")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Institute")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Level")
+>>>>>>> 43ff8873892fb2690b1e4c51875d947e732ac9a4
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
+<<<<<<< HEAD
                     b.ToTable("Attendances");
+=======
+                    b.ToTable("Educations");
+>>>>>>> 43ff8873892fb2690b1e4c51875d947e732ac9a4
                 });
 
             modelBuilder.Entity("Models.Entities.Employee", b =>

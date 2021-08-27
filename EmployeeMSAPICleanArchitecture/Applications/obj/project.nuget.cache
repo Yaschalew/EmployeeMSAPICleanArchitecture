@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "BvRzSlFfyKXP/gb89bPRUPIi9tNjBGw3w61bfLpxy5EihWOHUQjx7LaMX7EVqTv2x4msGS1GeXY+t6BNm161Lg==",
   "success": true,
   "projectFilePath": "D:\\Trainings\\Boot Camp\\API\\CleanArchitecture\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj",
+=======
+  "dgSpecHash": "a0D5F8euUzFckh1lFmmZPfBResciis5kZ744lY8meMhnlPtyxDOY94sfJgaCXz8+gpkCVgQMbH1Xa55S/3F/og==",
+  "success": true,
+  "projectFilePath": "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj",
+>>>>>>> 43ff8873892fb2690b1e4c51875d947e732ac9a4
   "expectedPackageFiles": [],
   "logs": []
 }

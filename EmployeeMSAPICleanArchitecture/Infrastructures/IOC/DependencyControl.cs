@@ -18,8 +18,15 @@ namespace Infrastructures.IOC
         {
             services.AddScoped<IEmployee, EmployeeRepository>();
             services.AddScoped<IemployeeService, EmployeeService>();
+<<<<<<< HEAD
             services.AddScoped<IAttendance, AttendanceRepository>();
             services.AddScoped<IAttendanceService, AttendanceService>();
+=======
+            services.AddScoped<IEducation, EducationRepositiory>();
+            services.AddScoped<IEducationService, EducationService>();
+       
+
+>>>>>>> 43ff8873892fb2690b1e4c51875d947e732ac9a4
         }
     }
 }

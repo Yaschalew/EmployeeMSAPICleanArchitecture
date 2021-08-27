@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "D:\\Trainings\\Boot Camp\\API\\CleanArchitecture\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Infrastructures\\Infrastructures.csproj": {}
   },
   "projects": {
@@ -12,13 +13,26 @@
         "projectPath": "D:\\Trainings\\Boot Camp\\API\\CleanArchitecture\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
         "outputPath": "D:\\Trainings\\Boot Camp\\API\\CleanArchitecture\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\obj\\",
+=======
+    "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Infrastructures\\Infrastructures.csproj": {}
+  },
+  "projects": {
+    "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj",
+        "projectName": "Applications",
+        "projectPath": "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\obj\\",
+>>>>>>> 43ff8873892fb2690b1e4c51875d947e732ac9a4
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -34,8 +48,13 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+<<<<<<< HEAD
               "D:\\Trainings\\Boot Camp\\API\\CleanArchitecture\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj": {
                 "projectPath": "D:\\Trainings\\Boot Camp\\API\\CleanArchitecture\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj"
+=======
+              "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj": {
+                "projectPath": "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj"
+>>>>>>> 43ff8873892fb2690b1e4c51875d947e732ac9a4
               }
             }
           }
@@ -68,6 +87,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "D:\\Trainings\\Boot Camp\\API\\CleanArchitecture\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Infrastructures\\Infrastructures.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -76,13 +96,23 @@
         "projectPath": "D:\\Trainings\\Boot Camp\\API\\CleanArchitecture\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Infrastructures\\Infrastructures.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
         "outputPath": "D:\\Trainings\\Boot Camp\\API\\CleanArchitecture\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Infrastructures\\obj\\",
+=======
+    "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Infrastructures\\Infrastructures.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Infrastructures\\Infrastructures.csproj",
+        "projectName": "Infrastructures",
+        "projectPath": "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Infrastructures\\Infrastructures.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Infrastructures\\obj\\",
+>>>>>>> 43ff8873892fb2690b1e4c51875d947e732ac9a4
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -98,11 +128,19 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+<<<<<<< HEAD
               "D:\\Trainings\\Boot Camp\\API\\CleanArchitecture\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj": {
                 "projectPath": "D:\\Trainings\\Boot Camp\\API\\CleanArchitecture\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj"
               },
               "D:\\Trainings\\Boot Camp\\API\\CleanArchitecture\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj": {
                 "projectPath": "D:\\Trainings\\Boot Camp\\API\\CleanArchitecture\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj"
+=======
+              "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj": {
+                "projectPath": "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Applications\\Applications.csproj"
+              },
+              "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj": {
+                "projectPath": "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj"
+>>>>>>> 43ff8873892fb2690b1e4c51875d947e732ac9a4
               }
             }
           }
@@ -151,6 +189,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "D:\\Trainings\\Boot Camp\\API\\CleanArchitecture\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -159,13 +198,23 @@
         "projectPath": "D:\\Trainings\\Boot Camp\\API\\CleanArchitecture\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
         "outputPath": "D:\\Trainings\\Boot Camp\\API\\CleanArchitecture\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\obj\\",
+=======
+    "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj",
+        "projectName": "Domains",
+        "projectPath": "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\BootCampAug2\\BootCampTrainingProjects\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\obj\\",
+>>>>>>> 43ff8873892fb2690b1e4c51875d947e732ac9a4
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
