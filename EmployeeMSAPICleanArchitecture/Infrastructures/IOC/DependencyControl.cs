@@ -1,5 +1,6 @@
 ﻿using Applications.Interfaces;
 using Applications.Services;
+using Domains.Interface;
 using Infrastructures.Repository;
 using Microsoft.Extensions.DependencyInjection;
 using Models.Interface;
@@ -15,9 +16,10 @@ namespace Infrastructures.IOC
     {
         public static void RegisterServices(IServiceCollection services)
         {
-           
             services.AddScoped<IEmployee, EmployeeRepository>();
             services.AddScoped<IemployeeService, EmployeeService>();
+            services.AddScoped<IAttendance, AttendanceRepository>();
+            services.AddScoped<IAttendanceService, AttendanceService>();
         }
     }
 }

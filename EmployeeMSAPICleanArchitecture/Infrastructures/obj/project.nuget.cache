@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Pq7BPWXfrIScs6+otWcnPsfp2Q/hmuUNKX8n7Ua2CUvM/9Jcen5K3MA5zToOkoXOs6COwhLqqoo+6EIgI/zHHg==",
+  "dgSpecHash": "p/rTwjzw84DtYW8D1+32KI+aFvexYPY5ZFQjfBXtxGFCKOMgFTwhPSIEB4n6oAJXOrteh1xwHrRnFfl1+uIBlg==",
   "success": true,
-  "projectFilePath": "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Infrastructures\\Infrastructures.csproj",
+  "projectFilePath": "D:\\Trainings\\Boot Camp\\API\\CleanArchitecture\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Infrastructures\\Infrastructures.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

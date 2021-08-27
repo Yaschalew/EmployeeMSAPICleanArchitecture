@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pdhJvP75ioylH3CZvfHK7IydzN1hu5XPDVP7DcJrsRIsSAeuoK/nmt05pjhPvVQ/QXvYAaShjQvsqVYCEiOucw==",
+  "dgSpecHash": "8lH5p0tEa1P0k7TGPl73R2extWLlGaAVFrkUeVo0Ck4ibnd0CYhHmiGutrdVMeuWz1PSeMPD0r5leD4jxb1maQ==",
   "success": true,
-  "projectFilePath": "D:\\excellerent\\exc-code\\dotNet\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj",
+  "projectFilePath": "D:\\Trainings\\Boot Camp\\API\\CleanArchitecture\\EmployeeMSAPICleanArchitecture\\EmployeeMSAPICleanArchitecture\\Models\\Domains.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
