@@ -45,6 +45,38 @@ namespace Infrastructures.Migrations
                     b.ToTable("Educations");
                 });
 
+            modelBuilder.Entity("Domains.Entities.Experience", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Company")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("EmployeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Position")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Remark")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ResignReason")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Salary")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Year")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Experiences");
+                });
+
             modelBuilder.Entity("Models.Entities.Employee", b =>
                 {
                     b.Property<Guid>("Id")

@@ -198,3 +198,4 @@ D:\BootCampAug2\BootCampTrainingProjects\EmployeeMSAPICleanArchitecture\Employee
 D:\BootCampAug2\BootCampTrainingProjects\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\WebAPI\obj\Debug\net5.0\ref\WebAPI.dll
 D:\BootCampAug2\BootCampTrainingProjects\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\WebAPI\obj\Debug\net5.0\WebAPI.pdb
 D:\BootCampAug2\BootCampTrainingProjects\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\WebAPI\obj\Debug\net5.0\WebAPI.genruntimeconfig.cache
+D:\BootCampAug2\BootCampTrainingProjects\EmployeeMSAPICleanArchitecture\EmployeeMSAPICleanArchitecture\WebAPI\obj\Debug\net5.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs

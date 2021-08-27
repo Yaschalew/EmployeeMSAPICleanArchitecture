@@ -21,7 +21,9 @@ namespace Infrastructures.IOC
             services.AddScoped<IemployeeService, EmployeeService>();
             services.AddScoped<IEducation, EducationRepositiory>();
             services.AddScoped<IEducationService, EducationService>();
-       
+            services.AddScoped<IExperience, ExperienceRepository>();
+            services.AddScoped<IExperienceService, ExperienceService>();
+
 
         }
     }
