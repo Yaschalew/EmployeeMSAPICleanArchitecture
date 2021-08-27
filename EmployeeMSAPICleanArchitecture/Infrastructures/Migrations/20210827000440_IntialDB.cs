@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Infrastructures.Migrations
 {
-    public partial class Initial : Migration
+    public partial class IntialDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -36,6 +36,20 @@ namespace Infrastructures.Migrations
                 {
                     table.PrimaryKey("PK_Employees", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "JobInformations",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    EmployeeId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    PositinId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Remark = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_JobInformations", x => x.Id);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -45,6 +59,9 @@ namespace Infrastructures.Migrations
 
             migrationBuilder.DropTable(
                 name: "Employees");
+
+            migrationBuilder.DropTable(
+                name: "JobInformations");
         }
     }
 }

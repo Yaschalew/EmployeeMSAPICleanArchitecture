@@ -21,5 +21,6 @@ namespace Infrastructures.Context
         }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Education> Educations { get; set; }
+        public DbSet<JobInformation> JobInformations { get; set; }
     }
 }

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructures.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210826074344_Initial")]
-    partial class Initial
+    [Migration("20210827000440_IntialDB")]
+    partial class IntialDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,6 +45,26 @@ namespace Infrastructures.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Educations");
+                });
+
+            modelBuilder.Entity("Domains.Entities.JobInformation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("EmployeeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PositinId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Remark")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("JobInformations");
                 });
 
             modelBuilder.Entity("Models.Entities.Employee", b =>

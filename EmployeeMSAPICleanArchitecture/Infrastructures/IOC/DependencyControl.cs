@@ -20,8 +20,11 @@ namespace Infrastructures.IOC
             services.AddScoped<IEmployee, EmployeeRepository>();
             services.AddScoped<IemployeeService, EmployeeService>();
             services.AddScoped<IEducation, EducationRepositiory>();
-            services.AddScoped<IEducationService, EducationService>();
-       
+            services.AddScoped<IEducationService, EducationService>(); 
+            services.AddScoped<IJobInformation, JobInformationRepository>();
+            services.AddScoped<IJobInformationService, JobInformationService>();
+
+
 
         }
     }
