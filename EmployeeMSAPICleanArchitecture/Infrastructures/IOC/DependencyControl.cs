@@ -24,8 +24,11 @@ namespace Infrastructures.IOC
             services.AddScoped<IEducationService, EducationService>(); 
             services.AddScoped<IJobInformation, JobInformationRepository>();
             services.AddScoped<IJobInformationService, JobInformationService>();
-            services.AddScoped<IExperience, ExperienceRepository>();
+            services.AddScoped<IExperience, ExperienceRepository>(); 
             services.AddScoped<IExperienceService, ExperienceService>();
+
+            services.AddScoped<IPosition, PositionRepository>(); 
+            services.AddScoped<IpositionService, PositionServices>();
 
 
 

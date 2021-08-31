@@ -25,6 +25,7 @@ namespace Infrastructures.Context
         public DbSet<JobInformation> JobInformations { get; set; }
 
         public DbSet<Experience> Experiences { get; set; }
+        public DbSet<Position> Positions { get; set; }
 
     }
 }
