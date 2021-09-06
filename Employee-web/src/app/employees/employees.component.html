@@ -1,0 +1,21 @@
+
+<div >
+    <div style="text-align: right; padding-right: 10px;">
+        <a href="add-employee" >Add New Employee</a>
+    </div>   
+<table>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+    </tr>
+    <tr *ngFor="let employee of employeesList; index as i">
+        <td>{{i+1}}</td>
+        <td> {{employee.name}}</td>
+        <td> {{employee.phone}}</td>
+        <td>{{employee.email}}</td>
+    </tr>
+</table>
+  
+</div>
