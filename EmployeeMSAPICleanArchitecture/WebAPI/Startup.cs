@@ -39,6 +39,7 @@ namespace WebAPI
             {
                 option.UseSqlServer(Configuration.GetConnectionString("connectionName"));
             });
+            services.AddCors();
             RegisterServices(services);
         }
 
@@ -53,7 +54,10 @@ namespace WebAPI
             }
 
             app.UseHttpsRedirection();
-
+            app.UseCors(options =>
+              options.WithOrigins("http://localhost:4200")  // 4200 is front end rout
+            .AllowAnyHeader()
+            .AllowAnyMethod());
             app.UseRouting();
 
             app.UseAuthorization();
