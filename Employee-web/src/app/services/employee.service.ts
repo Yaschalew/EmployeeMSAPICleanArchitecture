@@ -11,6 +11,9 @@ url:string='https://localhost:5001/api/Employee';
    return this._http.get(this.url);
   }
   addEmployee(employee:any){
-    
+    return this._http.post(this.url,employee);
+  }
+  editEmployee(employee:any,id:string){
+    return this._http.patch(this.url+'/'+id,employee);
   }
 }

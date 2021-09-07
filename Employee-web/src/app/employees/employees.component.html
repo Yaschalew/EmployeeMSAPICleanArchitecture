@@ -9,12 +9,18 @@
         <th>Name</th>
         <th>Phone</th>
         <th>Email</th>
+        <th>Action</th>
     </tr>
     <tr *ngFor="let employee of employeesList; index as i">
         <td>{{i+1}}</td>
         <td> {{employee.name}}</td>
         <td> {{employee.phone}}</td>
         <td>{{employee.email}}</td>
+        <td>
+            <a href="edit-employee" style="padding-right: 10px;">Edit</a>
+            <a href="detail-employee" style="padding-right: 10px;">Details</a>
+            <a href="delete-employee" >Delete</a>
+        </td>
     </tr>
 </table>
   
