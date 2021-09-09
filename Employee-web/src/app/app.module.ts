@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ManiNavComponent } from './main-nav/mani-nav.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,7 +15,7 @@ import {ReactiveFormsModule,FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    ManiNavComponent
+    MainNavComponent
   ],
   imports: [
     BrowserModule,

@@ -29,7 +29,7 @@ namespace WebAPI.Controllers
         {
             return _iemployeeService.GetEmployee();
         }
-        [HttpPatch]
+        [HttpPatch("{id}")]
         public EmployeeItem UpdateEmployee(Guid id, EmployeeItem employeeItem)
         {
             return _iemployeeService.UpdateEmployee(id, employeeItem);
