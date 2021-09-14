@@ -1,0 +1,35 @@
+<div style="text-align: right; padding-right: 10px;">
+  <a href="./educations/addeducation" >Add Education</a>
+</div>
+
+<div>
+
+
+
+<table>
+<tr>
+
+  <th style="padding-right: 10px;">#</th>
+  <th style="padding-right: 10px;">EmployeId</th>
+  <th style="padding-right: 10px;">Level</th>
+  <th style="padding-right: 10px;">GraduatedYear</th>
+  <th style="padding-right: 10px;">Institue</th>
+  <th style="padding-right: 10px;">GPA</th>
+  <th style="padding-right: 10px;">Action</th>
+</tr>
+<tr *ngFor="let education of educationList; index as i">
+
+  <td>{{i+1}}</td>
+  <td> {{education.employeeId}}</td>
+  <td> {{education.level}}</td>
+  <td>{{education.graduatedYear}}</td>
+  <td>{{education.institute}}</td>
+  <td>{{education.gpa}}</td>
+  <td>
+      <a href="./educations/editeducation/{{education.id}}" style="padding-right: 10px;">Edit</a>
+      <a href="./educations/detaileducation" style="padding-right: 10px;">Details</a>
+      <a href="deleteducation" >Delete</a>
+  </td>
+</tr>
+</table>
+</div>

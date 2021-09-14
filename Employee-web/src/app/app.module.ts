@@ -1,17 +1,20 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import { AppComponent } from './app.component';
-import {HttpClientModule} from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ManiNavComponent } from './mani-nav/mani-nav.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { EducationService } from './services/educations/education.service';
+import {HttpClientModule} from '@angular/common/http';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { ManiNavComponent } from './mani-nav/mani-nav.component';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import {ReactiveFormsModule,FormsModule} from '@angular/forms';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { NgModule } from '@angular/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,9 +33,12 @@ import {ReactiveFormsModule,FormsModule} from '@angular/forms';
     MatListModule,
     FormsModule,
     ReactiveFormsModule,
-   
+
   ],
-  providers: [],
+  providers: [
+
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

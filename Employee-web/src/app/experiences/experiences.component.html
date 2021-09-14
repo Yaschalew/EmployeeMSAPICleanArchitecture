@@ -1,0 +1,27 @@
+
+<div >
+  <div style="text-align: right; padding-right: 10px;">
+      <a href="add-employee" >Add New Employee</a>
+  </div>
+<table>
+  <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Action</th>
+  </tr>
+  <tr *ngFor="let experience of experienceList; index as i">
+      <td>{{i+1}}</td>
+      <td> {{experience.EmployeId}}</td>
+      <td> {{experience.Salary}}</td>
+      <td>{{experience.Position}}</td>
+      <td>
+          <a href="" style="padding-right: 10px;">Edit</a>
+          <a href="" style="padding-right: 10px;">Details</a>
+          <a href="" >Delete</a>
+      </td>
+  </tr>
+</table>
+
+</div>
