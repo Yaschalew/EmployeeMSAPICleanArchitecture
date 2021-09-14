@@ -1,27 +1,62 @@
 
-<div >
+<div>
     <div style="text-align: right; padding-right: 10px;">
         <a href="add-employee" >Add New Employee</a>
     </div>   
-<table>
-    <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Phone</th>
-        <th>Email</th>
-        <th>Action</th>
-    </tr>
-    <tr *ngFor="let employee of employeesList; index as i">
-        <td>{{i+1}}</td>
-        <td> {{employee.name}}</td>
-        <td> {{employee.phone}}</td>
-        <td>{{employee.email}}</td>
-        <td>
-            <a href="edit-employee/{{employee.id}}" style="padding-right: 10px;">Edit</a>
-            <a href="detail-employee" style="padding-right: 10px;">Details</a>
-            <a href="delete-employee/{{employee.id}}" >Delete</a>
-        </td>
-    </tr>
-</table>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+      
+        <!-- Phone Column -->
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef> Phone </th>
+          <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+        </ng-container>
+      
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+          <ng-container matColumnDef="action" >
+            <th mat-header-cell *matHeaderCellDef> Action </th>
+            <td mat-cell *matCellDef="let element"> 
+                <button style="border-style: none; background-color: white;" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                          <a  routerLink="edit-employee/ {{element.id}}" style="text-decoration: none;">
+                            <mat-icon >edit</mat-icon>
+                            <span> Edit</span>
+                        </a>
+                    </button>
+                    <button mat-menu-item>                     
+                        <a routerLink="detail-employee/ {{element.id}}" style="text-decoration: none;">
+                            <mat-icon>visibility</mat-icon>
+                           <span>Details  </span>
+                        </a>
+                    
+                    </button>
+                    <button mat-menu-item (click)="openDialog(element.id)">
+                      <mat-icon>delete</mat-icon>
+                      <span>Delete</span>
+                    </button>
+                  </mat-menu>
+
+            </td>
+          </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+      
   
 </div>

@@ -11,7 +11,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {ReactiveFormsModule,FormsModule} from '@angular/forms';
+
 import { MainNavComponent } from './main-nav/main-nav.component';
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,7 @@ import { MainNavComponent } from './main-nav/main-nav.component';
     MatListModule,
     FormsModule,
     ReactiveFormsModule,
+    MatTableModule
    
   ],
   providers: [],

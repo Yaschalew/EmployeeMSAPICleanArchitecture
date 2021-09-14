@@ -19,4 +19,8 @@ url:string='https://localhost:5001/api/Employee';
   getEmployeeId(id:string){
     return this._http.get(this.url+"/"+id);
   }
+  deleteEmployee(id:string){
+    return this._http.delete(this.url+"/"+id);
+  }
+
 }
