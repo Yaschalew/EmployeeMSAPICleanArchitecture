@@ -12,6 +12,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {ReactiveFormsModule,FormsModule} from '@angular/forms';
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import {ReactiveFormsModule,FormsModule} from '@angular/forms';
     MatListModule,
     FormsModule,
     ReactiveFormsModule,
+    MatTableModule
    
   ],
   providers: [],
