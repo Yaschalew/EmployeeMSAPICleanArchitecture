@@ -26,17 +26,13 @@ constructor(fb: FormBuilder,private _positions:PositionService,private router:Ro
   onSubmit(){
     console.log("Position register")
     //console.log(this.forms);
-    if(this.position==null){
+    
     this._positions.addPositon(this.forms.value).subscribe(data=>{
       console.log(data);
       this.router.navigateByUrl("Positions");
     });
-  }
-  else{
-    this._positions.editPosition(this.forms.value,this.id).subscribe(data=>{
-      console.log('update');
-    })
-  }
+  
+  
 
   }
 
