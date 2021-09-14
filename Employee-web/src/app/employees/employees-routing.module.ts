@@ -17,7 +17,7 @@ const routes: Routes = [
   path:'edit-employee/:id',component : EmployeeEditComponent
 },
 {
-  path:'detail-employee',component : EmployeeDetailComponent
+  path:'detail-employee/:id',component : EmployeeDetailComponent
 },
 {
   path:'delete-employee/:id',component : EmployeeDeleteComponent

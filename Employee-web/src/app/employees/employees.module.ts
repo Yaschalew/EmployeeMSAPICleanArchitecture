@@ -8,8 +8,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeeDeleteComponent } from './employee-delete/employee-delete.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
-
-
+import {MatTableModule} from '@angular/material/table';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     EmployeesComponent,
@@ -23,6 +26,11 @@ import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
     EmployeesRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    MatTableModule,
+    MatMenuModule,
+    MatIconModule,
+    MatDialogModule,
+    MatSnackBarModule
   ]
 })
 export class EmployeesModule { }

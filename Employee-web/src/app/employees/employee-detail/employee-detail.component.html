@@ -1,1 +1,13 @@
-<p>employee-detail works!</p>
+<div>
+    <h2>Employee's Details</h2>
+    <form [formGroup]="forms" (ngSubmit)="onSubmit()">
+   <input type="text" formControlName="name" readonly placeholder="enter name">
+   <br>
+   <input type="text" formControlName="phone" readonly placeholder="enter phone">
+   <br>
+   <input type="text" formControlName="email" readonly placeholder="enter email">
+   <div style="padding-top: 20px;">
+    <input type="submit" value="<-- Back" />
+   </div>
+    </form>
+</div>
