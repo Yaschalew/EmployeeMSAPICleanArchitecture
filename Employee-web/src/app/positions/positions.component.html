@@ -1,0 +1,26 @@
+<div>
+    
+<div style="text-align:right; padding-right: 10px;">
+    <a href='./Positions/add-position' >Add Position</a> 
+</div>
+<table>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Remark</th>
+        
+    </tr>
+    <tr *ngFor="let position of positionsList; index as i">
+        <td>{{i+1}}</td>
+        <td> {{position.name}}</td>
+        <td> {{position.salary}}</td>
+        <td>{{position.remark}}</td>
+        <td>
+            <a href="edit-position" style="padding-right: 10px;">Edit</a>
+            <a href="detail-position" style="padding-right: 10px;">Details</a>
+            <a href="delete-position" >Delete</a>
+        </td>
+    </tr>
+</table>
+</div>  

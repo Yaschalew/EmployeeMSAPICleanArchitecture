@@ -1,0 +1,14 @@
+<p>position-add works!</p>
+<div>
+    <h1>Add Position</h1>
+<form  [formGroup]="forms" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="name" placeholder="enter name">
+    <br>
+    <input type="text" formControlName="salary" placeholder="enter salary">
+    <br>
+    <input type="text" formControlName="remark" placeholder="enter position">
+    <br>
+    <input type="submit" value="Submit"/>
+</form>
+
+</div>
