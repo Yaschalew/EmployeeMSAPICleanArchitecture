@@ -9,10 +9,10 @@ namespace Models.Interface
 {
    public interface IEmployee
     {
-        public Employee AddEmployee(Employee employee);
-        public IEnumerable<Employee> GetEmployee();
-        public Employee UpdateEmployee(Guid id,Employee employee);
-        public Employee GetOneEmployee(Guid id);
+        public EmployeeId AddEmployee(EmployeeId EmployeeId);
+        public IEnumerable<EmployeeId> GetEmployee();
+        public EmployeeId UpdateEmployee(Guid id,EmployeeId EmployeeId);
+        public EmployeeId GetOneEmployee(Guid id);
         public string DeleteEmployee(Guid id);
     }
 }

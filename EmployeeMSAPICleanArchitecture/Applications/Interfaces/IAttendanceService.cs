@@ -12,7 +12,7 @@ namespace Applications.Interfaces
     {
         public AttendanceItem AddAttendance(AttendanceItem attendance);
         public AttendanceViewModel GetAttendance();
-        public AttendanceItem UpdateAttendance(Guid id, AttendanceItem attendance);
+        public AttendanceItem UpdateAttendance(Guid id, AttendanceItem attendanceItem);
         public AttendanceItem GetOneAttendance(Guid id);
         public AttendanceViewModel GetAttendanceByEmployee(Guid id);
         public string DeleteAttendance(Guid id);

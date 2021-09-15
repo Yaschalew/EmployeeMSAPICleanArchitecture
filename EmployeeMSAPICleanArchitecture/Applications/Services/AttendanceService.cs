@@ -3,10 +3,6 @@ using Applications.Interfaces;
 using Domains.Entities;
 using Domains.Interface;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Applications.Services
 {
@@ -14,14 +10,16 @@ namespace Applications.Services
     public class AttendanceService : IAttendanceService
     {
         private readonly IAttendance _iAttendance;
+
         public AttendanceService(IAttendance iAttendance)
         {
             _iAttendance = iAttendance;
         }
+
         public AttendanceItem AddAttendance(AttendanceItem attendanceItem)
         {
             Attendance attendance = new Attendance();
-            attendance.Employee = attendanceItem.Employee;
+            attendance.EmployeeId = attendanceItem.EmployeeId;
             attendance.RegistryTime = attendanceItem.RegistryTime;
             attendance.RegistryType = attendanceItem.RegistryType;
             attendance.Remark = attendanceItem.Remark;
@@ -55,7 +53,7 @@ namespace Applications.Services
             Attendance attendance = new Attendance();
             attendance = _iAttendance.GetOneAttendance(id);
             attendanceItem.Id = attendance.Id;
-            attendanceItem.Employee = attendance.Employee;
+            attendanceItem.EmployeeId = attendance.EmployeeId;
             attendanceItem.RegistryTime = attendance.RegistryTime;
             attendanceItem.RegistryType = attendance.RegistryType;
             attendanceItem.Remark = attendance.Remark;
@@ -63,49 +61,16 @@ namespace Applications.Services
             return attendanceItem;
         }
 
-        public AttendanceItem MapRepoModel(Attendance attendance)
+        public AttendanceItem UpdateAttendance(Guid id, AttendanceItem attendanceItem)
         {
-            AttendanceItem attendance_item = new();
-            attendance_item.Id = attendance.Id;
-            attendance_item.Employee = attendance.Employee;
-            attendance_item.RegistryTime = attendance.RegistryTime;
-            attendance_item.RegistryType = attendance.RegistryType;
-            attendance_item.Remark = attendance.Remark;
-            return attendance_item;
+            Attendance attendance = new Attendance();
+            attendance.EmployeeId = attendanceItem.EmployeeId;
+            attendance.RegistryTime = attendanceItem.RegistryTime;
+            attendance.RegistryType = attendanceItem.RegistryType;
+            attendance.Remark = attendanceItem.Remark;
+
+            attendance = _iAttendance.UpdateAttendance(id, attendance);
+            return attendanceItem;
         }
-
-        public AttendanceItem UpdateAttendance(Guid id, AttendanceItem attendance)
-        {
-            throw new NotImplementedException();
-        }
-
-        //public AttendanceViewModel MapRepoTable(IEnumerable<Attendance> attendances)
-        //{
-        //    AttendanceViewModel attendanceViewModel = new();
-        //    List<IAttendance> attendanceList = new();
-        //    foreach(Attendance attendance in attendances)
-        //    {
-        //        attendanceList.Concat(this.MapRepoTable(attendance));
-        //    }
-
-        //    IEnumerable<IAttendance> attendanceIE = attendanceList;
-        //    attendanceViewModel.Attendances = attendanceIE;
-        //}
-
-        //public Attendance MapViewModel(Attendance attendance)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public AttendanceItem UpdateAttendance(Guid id, AttendanceItem attendanceItem)
-        //{
-        //    Attendance attendance = new Attendance();
-        //    attendance.EmployeeId = attendanceItem.EmployeeId;
-        //    attendance.AttendanceDate = attendanceItem.AttendanceDate;
-        //    attendance.Remark = attendanceItem.Remark;
-
-        //    _iAttendance.UpdateAttendance(id, attendance);
-        //    return attendanceItem;
-        //}
     }
 }

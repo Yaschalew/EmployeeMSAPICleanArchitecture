@@ -52,7 +52,7 @@ namespace Infrastructures.Repository
         public Attendance UpdateAttendance(Guid id, Attendance attendance)
         {
             var existAttendance = _context.Attendances.Find(id);
-            existAttendance.Employee = attendance.Employee;
+            existAttendance.EmployeeId = attendance.EmployeeId;
             existAttendance.RegistryTime = attendance.RegistryTime;
             existAttendance.RegistryType = attendance.RegistryType;
             existAttendance.Remark = attendance.Remark;

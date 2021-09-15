@@ -10,7 +10,7 @@ namespace Domains.Entities
     public class Attendance
     {
         public Guid Id { get; set; }
-        public Guid Employee { get; set; }
+        public Guid EmployeeId { get; set; }
         public DateTime RegistryTime { get; set; }
         public string RegistryType { get; set; }
         public string Remark { get; set; }

@@ -119,7 +119,7 @@ namespace Infrastructures.Migrations
                     b.ToTable("Positions");
                 });
 
-            modelBuilder.Entity("Models.Entities.Employee", b =>
+            modelBuilder.Entity("Models.Entities.EmployeeId", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()

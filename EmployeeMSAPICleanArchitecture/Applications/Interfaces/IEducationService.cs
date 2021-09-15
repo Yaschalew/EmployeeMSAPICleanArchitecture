@@ -7,7 +7,7 @@ namespace Applications.Interfaces
     {
         public EducationItem AddEducation(EducationItem education);
         public EducationViewModel GetEducation();
-        public EducationItem UpdateEducation(Guid id, EducationItem employee);
+        public EducationItem UpdateEducation(Guid id, EducationItem EmployeeId);
         public EducationItem GetOneEducation(Guid id);
         public string DeleteEducation(Guid id);
 

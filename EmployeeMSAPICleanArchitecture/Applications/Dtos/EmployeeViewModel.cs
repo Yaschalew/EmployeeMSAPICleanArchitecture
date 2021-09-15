@@ -9,6 +9,6 @@ namespace Applications.ViewModels
 {
    public class EmployeeViewModel
     {
-      public  IEnumerable<Employee> employees { get; set; }
+      public  IEnumerable<EmployeeId> employees { get; set; }
     }
 }

@@ -6,9 +6,9 @@ namespace Applications.Interfaces
     public interface IemployeeService
     {
 
-        public EmployeeItem AddEmployee(EmployeeItem employee);
+        public EmployeeItem AddEmployee(EmployeeItem EmployeeId);
         public EmployeeViewModel GetEmployee();
-        public EmployeeItem UpdateEmployee(Guid id, EmployeeItem employee);
+        public EmployeeItem UpdateEmployee(Guid id, EmployeeItem EmployeeId);
         public EmployeeItem GetOneEmployee(Guid id);
         public string DeleteEmployee(Guid id);
 

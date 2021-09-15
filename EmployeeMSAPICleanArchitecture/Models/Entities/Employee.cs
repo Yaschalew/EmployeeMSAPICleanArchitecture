@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Models.Entities
 {
 
-   public class Employee
+   public class EmployeeId
     {
         public Guid Id { get;set; }
         public string Name { get; set; }

@@ -19,12 +19,12 @@ namespace Applications.Services
         }
         public EmployeeItem AddEmployee(EmployeeItem employeeItem)
         {
-            Employee employee = new Employee();
-            employee.Name = employeeItem.Name;
-            employee.Phone = employeeItem.Phone;
-            employee.Email = employeeItem.Email;
+            EmployeeId EmployeeId = new EmployeeId();
+            EmployeeId.Name = employeeItem.Name;
+            EmployeeId.Phone = employeeItem.Phone;
+            EmployeeId.Email = employeeItem.Email;
 
-            _iEmployee.AddEmployee(employee);
+            _iEmployee.AddEmployee(EmployeeId);
             return employeeItem;
         }
 
@@ -45,22 +45,22 @@ namespace Applications.Services
         public EmployeeItem GetOneEmployee(Guid id)
         {
             EmployeeItem employeeItem = new EmployeeItem();
-            Employee employee = new Employee();
-            employee = _iEmployee.GetOneEmployee(id);
-            employeeItem.Name = employee.Name;
-            employeeItem.Email = employee.Email;
-            employeeItem.Phone = employee.Phone;
+            EmployeeId EmployeeId = new EmployeeId();
+            EmployeeId = _iEmployee.GetOneEmployee(id);
+            employeeItem.Name = EmployeeId.Name;
+            employeeItem.Email = EmployeeId.Email;
+            employeeItem.Phone = EmployeeId.Phone;
             return employeeItem;
         }
 
         public EmployeeItem UpdateEmployee(Guid id, EmployeeItem employeeItem)
         {
-            Employee employee = new Employee();
-            employee.Name = employeeItem.Name;
-            employee.Phone = employeeItem.Phone;
-            employee.Email = employeeItem.Email;
+            EmployeeId EmployeeId = new EmployeeId();
+            EmployeeId.Name = employeeItem.Name;
+            EmployeeId.Phone = employeeItem.Phone;
+            EmployeeId.Email = employeeItem.Email;
 
-            _iEmployee.UpdateEmployee(id, employee);
+            _iEmployee.UpdateEmployee(id, EmployeeId);
             return employeeItem;
         }
     }

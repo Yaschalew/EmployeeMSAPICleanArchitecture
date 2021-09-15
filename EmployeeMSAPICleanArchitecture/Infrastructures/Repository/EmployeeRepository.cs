@@ -14,11 +14,11 @@ namespace Infrastructures.Repository
         {
             _context = context;
         }
-        public Employee AddEmployee(Employee employee)
+        public EmployeeId AddEmployee(EmployeeId EmployeeId)
         {
-            _context.Employees.Add(employee);
+            _context.Employees.Add(EmployeeId);
             _context.SaveChanges();
-            return employee;
+            return EmployeeId;
         }
 
         public string DeleteEmployee(Guid id)
@@ -30,23 +30,23 @@ namespace Infrastructures.Repository
 
         }
 
-        public IEnumerable<Employee> GetEmployee()
+        public IEnumerable<EmployeeId> GetEmployee()
         {
             return _context.Employees;
         }
 
-        public Employee GetOneEmployee(Guid id)
+        public EmployeeId GetOneEmployee(Guid id)
         {
             return _context.Employees.Find(id);
             
         }
 
-        public Employee UpdateEmployee(Guid id, Employee employee)
+        public EmployeeId UpdateEmployee(Guid id, EmployeeId EmployeeId)
         {
             var existEmployee = _context.Employees.Find(id);
-            existEmployee.Name = employee.Name;
-            existEmployee.Email = employee.Email;
-            existEmployee.Phone = employee.Phone;
+            existEmployee.Name = EmployeeId.Name;
+            existEmployee.Email = EmployeeId.Email;
+            existEmployee.Phone = EmployeeId.Phone;
             _context.Entry(existEmployee).State = EntityState.Modified;
             _context.SaveChanges();
             return existEmployee;
