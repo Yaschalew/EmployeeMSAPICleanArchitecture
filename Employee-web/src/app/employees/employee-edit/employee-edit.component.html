@@ -1,1 +1,11 @@
-<p>employee-edit works!</p>
+<div>
+    <h2>Add Employee</h2>
+    <form [formGroup]="forms" (ngSubmit)="onSubmit()">
+   <input type="text" formControlName="name" placeholder="enter name">
+   <br>
+   <input type="text" formControlName="phone" placeholder="enter phone">
+   <br>
+   <input type="text" formControlName="email" placeholder="enter email">
+   <input type="submit" value="Submit" />
+    </form>
+</div>

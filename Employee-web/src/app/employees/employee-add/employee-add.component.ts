@@ -19,7 +19,7 @@ forms:FormGroup;
     });
    }
    employee:any;
- id:string='';
+   id:string='';
   ngOnInit(): void {
   // this.getOneEmployee(this.id);
   }

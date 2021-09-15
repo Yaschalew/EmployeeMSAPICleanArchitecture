@@ -19,4 +19,11 @@ url:string='https://localhost:5001/api/Employee';
   editEmployee(employee:any,id:string){
     return this._http.patch(this.url+'/'+id,employee);
   }
+  getEmployeeId(id:string){
+    return this._http.get(this.url+"/"+id);
+  }
+  deleteEmployee(id:string){
+    return this._http.delete(this.url+"/"+id);
+  }
+
 }
