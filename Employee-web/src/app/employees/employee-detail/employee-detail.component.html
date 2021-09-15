@@ -1,13 +1,76 @@
-<div>
+<div style="padding-left: 10%;">
     <h2>Employee's Details</h2>
     <form [formGroup]="forms" (ngSubmit)="onSubmit()">
-   <input type="text" formControlName="name" readonly placeholder="enter name">
-   <br>
-   <input type="text" formControlName="phone" readonly placeholder="enter phone">
-   <br>
-   <input type="text" formControlName="email" readonly placeholder="enter email">
-   <div style="padding-top: 20px;">
-    <input type="submit" value="<-- Back" />
-   </div>
+        <div>
+        <ng-container  >
+            <mat-form-field style="padding-right: 13px;" >
+                <mat-label>First name</mat-label>
+                <input matInput formControlName="fName" placeholder="enter first name">
+              </mat-form-field>
+           </ng-container>
+
+            <ng-container >
+                <mat-form-field style="padding-right: 13px;">
+                    <mat-label>Last name</mat-label>
+                    <input matInput formControlName="lName" readonly placeholder="enter last name">
+                  </mat-form-field>
+               </ng-container>
+           
+                <ng-container >
+                    <mat-form-field style="padding-right: 13px;">
+                        <mat-label>Middle Name</mat-label>
+                        <input matInput formControlName="mName" readonly placeholder="enter middle name">
+                      </mat-form-field>
+                   </ng-container>
+                </div>
+                <div class="py-4">
+                    <ng-container >
+                    <mat-form-field style="padding-right: 13px;">
+                        <mat-label>Gender</mat-label>
+                        <input matInput formControlName="gender" readonly placeholder="enter middle name">
+                      </mat-form-field>
+                   </ng-container>
+                   <ng-container >
+                    <mat-form-field style="padding-right: 13px;">
+                        <mat-label>Birth Date</mat-label>
+                        <input matInput formControlName="birtDate" readonly placeholder="enter middle name">
+                      </mat-form-field>
+                   </ng-container>
+                </div>
+                <div>
+                    <ng-container >
+                        <mat-form-field style="padding-right: 13px;">
+                            <mat-label >Phone</mat-label>
+                            <input matInput formControlName="phone" readonly placeholder="enter phone">
+                          </mat-form-field>
+                       </ng-container>
+                        <ng-container >
+                            <mat-form-field style="padding-right: 13px;">
+                                <mat-label>Email</mat-label>
+                                <input matInput formControlName="email" readonly placeholder="enter email">
+                              </mat-form-field>
+                           </ng-container>
+                            <ng-container >
+                                <mat-form-field style="padding-right: 13px;">
+                                    <mat-label>Address</mat-label>
+                                    <input matInput formControlName="address" readonly placeholder="enter address">
+                                  </mat-form-field>
+                               </ng-container>
+                            </div>
+                            <div>
+                                <ng-container >
+                                    <mat-form-field style="padding-right: 13px;">
+                                        <mat-label>Hired Date</mat-label>
+                                        <input matInput formControlName="hiredAt" readonly placeholder="enter middle name">
+                                      </mat-form-field>
+                                   </ng-container>
+                                   <ng-container >
+                                    <mat-form-field style="padding-right: 13px;">
+                                        <mat-label>Status</mat-label>
+                                        <input matInput formControlName="status" readonly placeholder="enter middle name">
+                                      </mat-form-field>
+                                   </ng-container>
+                                    </div>
+                                    
     </form>
 </div>
