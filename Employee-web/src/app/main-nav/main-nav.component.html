@@ -29,6 +29,22 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>Employee MS</span>
+      <div class="flex-auto"></div>
+      <div><button mat-button [matMenuTriggerFor]="menu"> 
+        <mat-icon fontSet="fa"  fontIcon="fa-user"></mat-icon>
+        <span>Yaschalew</span>
+      </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon fontSet="fa"  fontIcon="fa-cog"></mat-icon>
+            <span>Settings</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon fontSet="fa"  fontIcon="fa-sign-out-alt"></mat-icon>
+            Logout
+
+          </button>
+        </mat-menu></div>
     </mat-toolbar>
     <!-- Add Content Here -->
     <ng-content>
