@@ -10,9 +10,9 @@ import { NgModule } from '@angular/core';
 const routes: Routes = [
   { path: '', component: EducationsComponent },
   { path: 'addeducation', component: AddeducationComponent },
-  { path: 'deleteducation', component: DeleteeducationComponent },
+  { path: 'deleteducation/:id', component: DeleteeducationComponent },
   { path: 'editeducation/:id', component: EditeducationComponent },
-  { path: 'detaileducation', component: DetaileducationComponent }
+  { path: 'detaileducation/:id', component: DetaileducationComponent }
 
 
 

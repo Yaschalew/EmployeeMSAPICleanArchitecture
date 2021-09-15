@@ -25,11 +25,10 @@ this.forms=this.fb.group({
 
 });
 this.id=this.route.snapshot.paramMap.get('id');
-alert(this.id);
 this._educationservice.getEducationById(this.id).subscribe((data:any)=>{
   this.education=data;
   this.patchValues(data);
-  console.log(this.education);
+  console.log(this.education.level);
 });
   }
 patchValues(data: any) {

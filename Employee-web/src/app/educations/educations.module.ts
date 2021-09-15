@@ -7,6 +7,11 @@ import { DetaileducationComponent } from './detaileducation/detaileducation.comp
 import { EditeducationComponent } from './editeducation/editeducation.component';
 import { EducationsComponent } from './educations.component';
 import { EducationsRoutingModule } from './educations-routing.module';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTableModule} from '@angular/material/table';
 import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -21,7 +26,12 @@ import { NgModule } from '@angular/core';
     CommonModule,
     EducationsRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    MatMenuModule,
+    MatIconModule,
+    MatDialogModule,
+    MatSnackBarModule
   ]
 })
 export class EducationsModule { }

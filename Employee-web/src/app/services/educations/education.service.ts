@@ -27,8 +27,8 @@ export class EducationService {
   {
     return this._http.patch(this.url+'/'+id,education);
   }
-  deleteEducation(education:any,id:string){
-    return this._http.delete(this.url+'/'+id,education);
+  deleteEducation(id:string){
+    return this._http.delete(this.url+'/'+id);
   }
 
 }
