@@ -30,8 +30,8 @@ namespace Infrastructures.IOC
             services.AddScoped<IPosition, PositionRepository>(); 
             services.AddScoped<IpositionService, PositionServices>();
 
-
-
+            services.AddScoped<IAttendance, AttendanceRepository>();
+            services.AddScoped<IAttendanceService, AttendanceService>();
         }
     }
 }

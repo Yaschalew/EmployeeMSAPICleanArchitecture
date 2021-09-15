@@ -19,6 +19,7 @@ namespace Infrastructures.Context
         {
             base.OnModelCreating(modelBuilder);
         }
+        public DbSet<Attendance> Attendances { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Education> Educations { get; set; }
 
