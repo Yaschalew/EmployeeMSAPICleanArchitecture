@@ -12,15 +12,12 @@ import { EmployeeDeleteComponent } from './employee-delete/employee-delete.compo
 export class EmployeesComponent implements OnInit {
   displayedColumns: string[] = ['roNo','fname','lname','mname','birthDate', 'phone', 'email','address','hiredAt','status','action'];
   dataSource : any;
-employeesList:any;
 id:any;
   constructor(private _snackBar: MatSnackBar,private _employees:EmployeeService,public dialog: MatDialog,private router:Router) { }
 
   ngOnInit(): void {
     this._employees.getEmployees().subscribe((data:any)=>{
-      this.employeesList=data.employees;
       this.dataSource=data.employees;
-      console.log(this.employeesList);
     });
   }
 

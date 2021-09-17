@@ -1,1 +1,94 @@
-<p>job-infos works!</p>
+<div>
+
+    <div style="text-align: right; padding-right: 5%;padding-bottom: 1%; ">
+        <a mat-raised-button href="jobInfos/job-add" style="color: SteelBlue;;">
+         <span style="padding-top: 10px;"> 
+          <mat-icon fontSet="fa"  fontIcon="fa-plus"></mat-icon>
+          <span> Add Job</span></span>
+        </a>
+    </div> 
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+          <ng-container matColumnDef="roNo">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element;let i = index;"> {{i+1}} </td>
+          </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.employee.fName+ " "+ element.employee.lName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef>Position </th>
+      <td mat-cell *matCellDef="let element"> {{element.position.name}} </td>
+    </ng-container>
+   
+    <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef>Role </th>
+        <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="salary">
+        <th mat-header-cell *matHeaderCellDef>Salary </th>
+        <td mat-cell *matCellDef="let element"> {{element.position.salary}} </td>
+      </ng-container>
+   
+      <ng-container matColumnDef="applyAt">
+        <th mat-header-cell *matHeaderCellDef>Apply At </th>
+        <td mat-cell *matCellDef="let element"> {{element.employee.hiredAt | date:"dd-MM-yy"}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="hiredAt">
+        <th mat-header-cell *matHeaderCellDef>Hired At </th>
+        <td mat-cell *matCellDef="let element"> {{element.hiredDate | date:"dd-MM-yy"}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status" >
+        <th mat-header-cell *matHeaderCellDef>Status </th>
+        <td mat-cell *matCellDef="let element">
+           <div *ngIf="element.status">
+            <mat-icon fontSet="fa"  fontIcon="fa-check" class="text-green-600"></mat-icon>
+           </div>
+           <div *ngIf="!element.status">
+            <mat-icon fontSet="fa"  fontIcon="fa-times" class="text-red-400"></mat-icon>
+           </div>
+       
+        </td>
+      </ng-container>
+   
+      <ng-container matColumnDef="action" >
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element"> 
+            <button style="border-style: none; background-color: white;" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                      <a  routerLink="edit-employee/ {{element.id}}" style="text-decoration: none;">
+                        <mat-icon fontSet="fa"  fontIcon="fa-pen"></mat-icon>
+                        <span> Edit</span>
+                    </a>
+                </button>
+                <button mat-menu-item>                     
+                    <a routerLink="detail-employee/ {{element.id}}" style="text-decoration: none;">
+                      <mat-icon fontSet="fa"  fontIcon="fa-eye"></mat-icon>
+                       <span>Details  </span>
+                    </a>
+                
+                </button>
+                <button mat-menu-item >
+                  <mat-icon fontSet="fa"  fontIcon="fa-trash"></mat-icon>
+                  <span>Delete</span>
+                </button>
+              </mat-menu>
+
+        </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
