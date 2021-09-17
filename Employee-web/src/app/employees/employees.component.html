@@ -1,8 +1,8 @@
 
 <div>
-    <div style="text-align: right; padding-right: 10px;">
+    <!-- <div style="text-align: right; padding-right: 10px;">
         <a href="add-employee" >Add New Employee</a>
-    </div>
+    </div> -->
 <!-- <table>
     <tr>
         <th>#</th>
@@ -25,6 +25,14 @@
 </table> -->
 
     </div>
+
+    <div style="text-align: right; padding-right: 5%;padding-bottom: 1%; ">
+        <a mat-raised-button href="add-employee" style="color: SteelBlue;;">
+         <span style="padding-top: 10px;">
+           <mat-icon >add</mat-icon>
+          <span> Add Employee</span></span>
+        </a>
+    </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
@@ -32,9 +40,21 @@
 
 
         <!-- Name Column -->
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> Name </th>
-          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        <ng-container matColumnDef="fname">
+          <th mat-header-cell *matHeaderCellDef> First Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.fName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="lname">
+          <th mat-header-cell *matHeaderCellDef>Last Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.lName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="mname">
+          <th mat-header-cell *matHeaderCellDef>Middle Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.mName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="birthDate">
+          <th mat-header-cell *matHeaderCellDef> Birth Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.birtDate | date:"dd-MM-yy"}} </td>
         </ng-container>
 
         <!-- Phone Column -->
@@ -42,11 +62,23 @@
           <th mat-header-cell *matHeaderCellDef> Phone </th>
           <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
         </ng-container>
-
         <!-- Email Column -->
         <ng-container matColumnDef="email">
           <th mat-header-cell *matHeaderCellDef> Email </th>
           <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef> Address </th>
+          <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+        </ng-container>
+        <ng-container matColumnDef="hiredAt">
+          <th mat-header-cell *matHeaderCellDef> Hired At </th>
+          <td mat-cell *matCellDef="let element"> {{element.hiredAt | date:"dd-MM-yy"}} </td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element"> {{element.status}} </td>
         </ng-container>
           <ng-container matColumnDef="action" >
             <th mat-header-cell *matHeaderCellDef> Action </th>

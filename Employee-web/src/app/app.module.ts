@@ -38,6 +38,8 @@ import { NgModule } from '@angular/core';
   ],
   providers: [
     MatTableModule
+
+
   ],
   bootstrap: [AppComponent]
 })

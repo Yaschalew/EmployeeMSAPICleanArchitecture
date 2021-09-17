@@ -14,11 +14,12 @@ export class AddeducationComponent implements OnInit {
 
   constructor(fb:FormBuilder,private _educations:EducationService,private router:Router) {
     this.forms=fb.group({
-      employeid:'',
+      EmployeeId:'',
       level:'',
       graduated_year:'',
       institute:'',
-      gpa:''
+      gpa:'',
+      address:''
 
     });
    }
@@ -34,7 +35,7 @@ export class AddeducationComponent implements OnInit {
       {
         this.router.navigateByUrl("educations");
       });
-      }
+    }
 
 
   }

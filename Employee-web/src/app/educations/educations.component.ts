@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./educations.component.scss']
 })
 export class EducationsComponent implements OnInit {
-  displayedColumns: string[] = ['EmployeId', 'Level', 'GraduatedYear','Institue','GPA','action'];
+  displayedColumns: string[] = ['EmployeId', 'Level', 'GraduatedYear','Institue','GPA','address','action'];
 datasource:any;
 educationList:any;
 id:any;

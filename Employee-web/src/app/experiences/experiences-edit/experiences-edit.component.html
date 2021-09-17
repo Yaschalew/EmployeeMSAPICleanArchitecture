@@ -1,1 +1,69 @@
-<p>experiences-edit works!</p>
+<div style="padding-left: 10%;">
+  <h2>Edit Experience</h2>
+  <form [formGroup]="forms" (ngSubmit)="onSubmit()">
+      <div>
+      <ng-container  >
+          <mat-form-field style="padding-right: 13px;" >
+              <mat-label>Employee Id</mat-label>
+              <input matInput formControlName="Employeid" placeholder="enter first name">
+            </mat-form-field>
+         </ng-container>
+
+
+         <ng-container >
+          <mat-form-field style="padding-right: 13px;">
+              <mat-label >Salary</mat-label>
+              <input matInput formControlName="Salary" placeholder="enter phone">
+            </mat-form-field>
+         </ng-container>
+
+              </div>
+
+              <div>
+
+                        <ng-container >
+                            <mat-form-field style="padding-right: 13px;">
+                                <mat-label>Position</mat-label>
+                                <input matInput formControlName="Position" placeholder="enter email">
+                              </mat-form-field>
+                          </ng-container>
+                          <ng-container >
+                              <mat-form-field style="padding-right: 13px;">
+                                  <mat-label>Company</mat-label>
+                                  <input matInput formControlName="Company" placeholder="enter address">
+                                </mat-form-field>
+                             </ng-container>
+                          </div>
+                          <div>
+                              <ng-container >
+                                  <mat-form-field style="padding-right: 13px;">
+                                      <mat-label>Year</mat-label>
+                                      <input matInput formControlName="Year" [matDatepicker]="picker">
+                                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                      <mat-datepicker #picker></mat-datepicker>
+                                    </mat-form-field>
+                                 </ng-container>
+
+
+
+                        <ng-container >
+                          <mat-form-field style="padding-right: 13px;">
+                              <mat-label>ResignReason</mat-label>
+                              <input matInput formControlName="ResignReason" placeholder="enter email">
+                            </mat-form-field>
+                        </ng-container>
+
+                        <ng-container >
+                          <mat-form-field style="padding-right: 13px;">
+                              <mat-label>Remark</mat-label>
+                              <input matInput formControlName="Remark" placeholder="enter email">
+                            </mat-form-field>
+                        </ng-container>
+
+
+
+                                  </div>
+
+ <input type="submit"  class="bg-blue-400 rounded text-gray-50 hover:bg-indigo-300 w-40" value="Submit" />
+  </form>
+</div>

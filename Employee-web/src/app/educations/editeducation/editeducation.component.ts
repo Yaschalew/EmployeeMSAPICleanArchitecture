@@ -20,7 +20,9 @@ this.forms=this.fb.group({
   level:'',
   graduated_year:'',
   institute:'',
-  gpa:''
+  gpa:'',
+  address:''
+
 
 
 });
@@ -37,7 +39,9 @@ patchValues(data: any) {
     level: data.level,
     graduated_year:data.graduatedYear,
     institute:data.institute,
-    gpa:data.gpa
+    gpa:data.gpa,
+    address:data.address
+
 
  })
 }

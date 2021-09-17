@@ -13,9 +13,16 @@ export class EmployeeAddComponent implements OnInit {
 forms:FormGroup;
   constructor(fb: FormBuilder,private _employees:EmployeeService,private router:Router ) {
     this.forms=fb.group({
-      name:'',
+      fName:'',
+      lName:'',
+      mName:'',
+      gender:'',
       phone:'',
-      email:''
+      email:'',
+      birtDate:'',
+      address:'',
+      hiredAt:'',
+      status:''
     });
    }
    employee:any;
@@ -26,6 +33,8 @@ forms:FormGroup;
   onSubmit(){
     console.log("register")
     //console.log(this.forms);
+    if(this.employee==null){
+      console.log(this.forms.value);
 
     this._employees.addEmployee(this.forms.value).subscribe(data=>{
       console.log(data);
@@ -33,7 +42,5 @@ forms:FormGroup;
     });
 
   }
-  getOneEmployee(id:string){
-
-  }
+}
 }
