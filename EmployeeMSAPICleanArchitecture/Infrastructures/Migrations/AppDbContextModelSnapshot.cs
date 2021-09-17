@@ -25,14 +25,17 @@ namespace Infrastructures.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("EmployeeId")
+                    b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
 
                     b.Property<string>("GPA")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("GraduatedYear")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("GraduatedYear")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Institute")
                         .HasColumnType("nvarchar(max)");

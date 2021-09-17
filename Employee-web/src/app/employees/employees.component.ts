@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+
+import { EmployeeDeleteComponent } from './employee-delete/employee-delete.component';
+import { EmployeeService } from '../services/employee.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { EmployeeService } from '../services/employee.service';
-import { EmployeeDeleteComponent } from './employee-delete/employee-delete.component';
+
 @Component({
   selector: 'app-employees',
   templateUrl: './employees.component.html',
@@ -30,18 +32,18 @@ id:any;
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       if(result){
-        this._employees.deleteEmployee(this.id).subscribe(data=>{          
+        this._employees.deleteEmployee(this.id).subscribe(data=>{
           location.reload();
           console.log(data);
-          
+
         })
         this._snackBar.open("Employee is deleted.","Ok");
         location.reload();
       }
-     
+
      // this.animal = result;
     });
   }
- 
+
 
 }

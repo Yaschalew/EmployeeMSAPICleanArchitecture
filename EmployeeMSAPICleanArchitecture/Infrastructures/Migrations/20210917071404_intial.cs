@@ -12,11 +12,12 @@ namespace Infrastructures.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    EmployeeId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EmployeeId = table.Column<int>(type: "int", nullable: false),
                     Level = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    GraduatedYear = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    GraduatedYear = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Institute = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    GPA = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    GPA = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

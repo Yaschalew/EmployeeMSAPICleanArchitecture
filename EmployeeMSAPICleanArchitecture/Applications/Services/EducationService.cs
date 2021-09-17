@@ -23,6 +23,7 @@ namespace Applications.Services
             education.GraduatedYear = educationItem.GraduatedYear;
             education.Institute = educationItem.Institute;
             education.GPA = educationItem.GPA;
+            education.Address = educationItem.Address;
 
             _iEducation.AddEducation(education);
 
@@ -54,6 +55,8 @@ namespace Applications.Services
             educationItem.GraduatedYear = education.GraduatedYear;
             educationItem.Institute = education.Institute;
             educationItem.GPA = education.GPA;
+            educationItem.Address = education.Address;
+
 
             return educationItem;
 
@@ -67,6 +70,7 @@ namespace Applications.Services
             education.GraduatedYear = educationItem.GraduatedYear;
             education.Institute = educationItem.Institute;
             education.GPA = educationItem.GPA;
+            education.Address = educationItem.Address;
 
             _iEducation.UpdateEducation(id, education);
             return educationItem;
