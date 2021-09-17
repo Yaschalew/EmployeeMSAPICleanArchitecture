@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./employees.component.scss']
 })
 export class EmployeesComponent implements OnInit {
-  displayedColumns: string[] = ['fname','lname','mname','birthDate', 'phone', 'email','address','hiredAt','status','action'];
+  displayedColumns: string[] = ['roNo','fname','lname','mname','birthDate', 'phone', 'email','address','hiredAt','status','action'];
   dataSource : any;
 employeesList:any;
 id:any;

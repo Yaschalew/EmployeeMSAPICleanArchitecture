@@ -1,44 +1,27 @@
 
 <div>
-    <!-- <div style="text-align: right; padding-right: 10px;">
-        <a href="add-employee" >Add New Employee</a>
-    </div> -->
-<!-- <table>
-    <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Phone</th>
-        <th>Email</th>
-        <th>Action</th>
-    </tr>
-    <tr *ngFor="let employee of employeesList; index as i">
-        <td>{{i+1}}</td>
-        <td> {{employee.name}}</td>
-        <td> {{employee.phone}}</td>
-        <td>{{employee.email}}</td>
-        <td>
-            <a href="./educations/edit-employee" style="padding-right: 10px;">Edit</a>
-            <a href="detail-employee" style="padding-right: 10px;">Details</a>
-            <a href="delete-employee" >Delete</a>
-        </td>
-    </tr>
-</table> -->
 
     </div>
 
     <div style="text-align: right; padding-right: 5%;padding-bottom: 1%; ">
         <a mat-raised-button href="add-employee" style="color: SteelBlue;;">
+
          <span style="padding-top: 10px;">
            <mat-icon >add</mat-icon>
-          <span> Add Employee</span></span>
+         <span style="padding-top: 10px;">
+          <mat-icon fontSet="fa"  fontIcon="fa-plus"></mat-icon>
+          <span> Add Employee</span>
+          </span></span>
         </a>
     </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
-
-
+              <ng-container matColumnDef="roNo">
+                <th mat-header-cell *matHeaderCellDef> No. </th>
+                <td mat-cell *matCellDef="let element;let i = index;"> {{i+1}} </td>
+              </ng-container>
         <!-- Name Column -->
         <ng-container matColumnDef="fname">
           <th mat-header-cell *matHeaderCellDef> First Name </th>
@@ -89,19 +72,19 @@
                   <mat-menu #menu="matMenu">
                     <button mat-menu-item>
                           <a  routerLink="edit-employee/ {{element.id}}" style="text-decoration: none;">
-                            <mat-icon >edit</mat-icon>
+                            <mat-icon fontSet="fa"  fontIcon="fa-pen"></mat-icon>
                             <span> Edit</span>
                         </a>
                     </button>
                     <button mat-menu-item>
                         <a routerLink="detail-employee/ {{element.id}}" style="text-decoration: none;">
-                            <mat-icon>visibility</mat-icon>
+                          <mat-icon fontSet="fa"  fontIcon="fa-eye"></mat-icon>
                            <span>Details  </span>
                         </a>
 
                     </button>
                     <button mat-menu-item (click)="openDialog(element.id)">
-                      <mat-icon>delete</mat-icon>
+                      <mat-icon fontSet="fa"  fontIcon="fa-trash"></mat-icon>
                       <span>Delete</span>
                     </button>
                   </mat-menu>
