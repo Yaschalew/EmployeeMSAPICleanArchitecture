@@ -1,12 +1,19 @@
 
 <div>
+
+    </div>
+
     <div style="text-align: right; padding-right: 5%;padding-bottom: 1%; ">
         <a mat-raised-button href="add-employee" style="color: SteelBlue;;">
-         <span style="padding-top: 10px;"> 
+
+         <span style="padding-top: 10px;">
+           <mat-icon >add</mat-icon>
+         <span style="padding-top: 10px;">
           <mat-icon fontSet="fa"  fontIcon="fa-plus"></mat-icon>
-          <span> Add Employee</span></span>
+          <span> Add Employee</span>
+          </span></span>
         </a>
-    </div>   
+    </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
@@ -32,6 +39,7 @@
           <th mat-header-cell *matHeaderCellDef> Birth Date </th>
           <td mat-cell *matCellDef="let element"> {{element.birtDate | date:"dd-MM-yy"}} </td>
         </ng-container>
+
         <!-- Phone Column -->
         <ng-container matColumnDef="phone">
           <th mat-header-cell *matHeaderCellDef> Phone </th>
@@ -42,7 +50,7 @@
           <th mat-header-cell *matHeaderCellDef> Email </th>
           <td mat-cell *matCellDef="let element"> {{element.email}} </td>
         </ng-container>
-       
+
         <ng-container matColumnDef="address">
           <th mat-header-cell *matHeaderCellDef> Address </th>
           <td mat-cell *matCellDef="let element"> {{element.address}} </td>
@@ -57,7 +65,7 @@
         </ng-container>
           <ng-container matColumnDef="action" >
             <th mat-header-cell *matHeaderCellDef> Action </th>
-            <td mat-cell *matCellDef="let element"> 
+            <td mat-cell *matCellDef="let element">
                 <button style="border-style: none; background-color: white;" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
                     <mat-icon>more_vert</mat-icon>
                   </button>
@@ -68,12 +76,12 @@
                             <span> Edit</span>
                         </a>
                     </button>
-                    <button mat-menu-item>                     
+                    <button mat-menu-item>
                         <a routerLink="detail-employee/ {{element.id}}" style="text-decoration: none;">
                           <mat-icon fontSet="fa"  fontIcon="fa-eye"></mat-icon>
                            <span>Details  </span>
                         </a>
-                    
+
                     </button>
                     <button mat-menu-item (click)="openDialog(element.id)">
                       <mat-icon fontSet="fa"  fontIcon="fa-trash"></mat-icon>
@@ -86,7 +94,3 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
-      
-      
-  
-</div>

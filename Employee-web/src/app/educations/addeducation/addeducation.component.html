@@ -1,0 +1,64 @@
+<div style="padding-left: 10%;">
+  <h2>Add Education</h2>
+  <form [formGroup]="forms" (ngSubmit)="onSubmit()">
+      <div>
+      <ng-container  >
+          <mat-form-field style="padding-right: 13px;" >
+              <mat-label>Employee ID</mat-label>
+              <input matInput formControlName="EmployeeId" placeholder="enter employee id">
+            </mat-form-field>
+         </ng-container>
+
+         <ng-container >
+          <mat-form-field>
+              <mat-label>Level</mat-label>
+              <mat-select disableRipple formControlName="level">
+                <mat-option value="Certficate">Certficate</mat-option>
+                <mat-option value="Diploma">Diploma</mat-option>
+                <mat-option value="Bachelor">Bachelor Degree</mat-option>
+                <mat-option value="Masters">Masters</mat-option>
+                <mat-option value="PHD">PHD</mat-option>
+              </mat-select>
+            </mat-form-field>
+         </ng-container>
+
+
+             <ng-container >
+              <mat-form-field style="padding-right: 13px;">
+                  <mat-label>Graduated Year</mat-label>
+                  <input matInput formControlName="graduated_year" [matDatepicker]="picker2">
+                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                  <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+             </ng-container>
+              </div>
+
+              <div>
+                  <ng-container >
+                      <mat-form-field style="padding-right: 13px;">
+                          <mat-label >GPA</mat-label>
+                          <input matInput formControlName="gpa" placeholder="ente gpa">
+                        </mat-form-field>
+                     </ng-container>
+                      <ng-container >
+                          <mat-form-field style="padding-right: 13px;">
+                              <mat-label>Institue</mat-label>
+                              <input matInput formControlName="institute" placeholder="enter institute name">
+                            </mat-form-field>
+                         </ng-container>
+                          <ng-container >
+                              <mat-form-field style="padding-right: 13px;">
+                                  <mat-label>Address</mat-label>
+                                  <input matInput formControlName="address" placeholder="enter address">
+                                </mat-form-field>
+                             </ng-container>
+                          </div>
+                          <div>
+
+
+
+                                  </div>
+
+ <input type="submit"  class="bg-blue-400 rounded text-gray-50 hover:bg-indigo-300 w-40 h-6" value="Submit" />
+  </form>
+</div>
