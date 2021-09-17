@@ -27,5 +27,7 @@ namespace Infrastructures.Context
         public DbSet<Experience> Experiences { get; set; }
         public DbSet<Position> Positions { get; set; }
 
+        public DbSet<Attendance> Attendances { get; set; }
+
     }
 }

@@ -11,8 +11,5 @@ namespace Domains.Interface
         public IEnumerable<Education> GetEducation();
         public Education GetOneEducation(Guid id);
         public string DeleteEducation(Guid id);
-
-       
-
     }
 }
