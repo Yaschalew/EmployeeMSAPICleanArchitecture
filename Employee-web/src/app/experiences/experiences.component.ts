@@ -45,7 +45,7 @@ displayedColumns: string[] = ['EmployeId', 'Salary', 'Position','Company','Year'
           console.log(data);
 
         })
-        this._snackBar.open("Educated status is deleted.","Ok");
+        this._snackBar.open("Experince status is deleted.","Ok");
         location.reload();
       }
 

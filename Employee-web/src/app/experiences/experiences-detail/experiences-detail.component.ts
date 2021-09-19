@@ -21,14 +21,13 @@ experience:any;
       Employeid:'',
       Salary:'',
       Position:'',
-      company:'',
       Year:'',
       ResignReason:'',
       Remark:''
 
     });
     this.id = this.route.snapshot.paramMap.get('id');
-    this._experience.getExperience().subscribe((data:any)=>{
+    this._experience.getExperienceID(this.id).subscribe((data:any)=>{
       this.experience=data;
       this.patchValues(data);
       // this.forms.value.name=this.experience.name;///////////
@@ -39,11 +38,10 @@ experience:any;
     this.forms.patchValue({
       Employeid:data.employeId,
       Salary:data.salary,
-      position:data.position,
-      company:data.company,
-      year:data.year,
-      resignReason:data.resignReason,
-      remark:data.remark
+      Position:data.position,
+      Year:data.year,
+      ResignReason:data.resignReason,
+      Remark:data.remark
 
    })
   }

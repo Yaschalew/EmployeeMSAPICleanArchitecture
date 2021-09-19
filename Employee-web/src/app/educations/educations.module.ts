@@ -18,6 +18,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import { NgModule } from '@angular/core';
+import { AddpopupComponent } from './addpopup/addpopup.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NgModule } from '@angular/core';
     AddeducationComponent,
     DeleteeducationComponent,
     EditeducationComponent,
-    DetaileducationComponent
+    DetaileducationComponent,
+    AddpopupComponent
   ],
   imports: [
     CommonModule,
