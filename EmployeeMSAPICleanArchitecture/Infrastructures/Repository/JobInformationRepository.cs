@@ -1,4 +1,5 @@
-﻿using Domains.Entities;
+﻿using Applications.Mapping;
+using Domains.Entities;
 using Domains.Interface;
 using Infrastructures.Context;
 using Microsoft.EntityFrameworkCore;
@@ -19,7 +20,10 @@ namespace Infrastructures.Repository
         }
         public JobInformation AddJobInformation(JobInformation jobInformation)
         {
+            jobInformation.Id = Guid.NewGuid();
             _context.JobInformations.Add(jobInformation);
+            jobInformation.CreatedAt = DateTime.Now;
+
             _context.SaveChanges();
             return jobInformation;
         }
@@ -35,11 +39,11 @@ namespace Infrastructures.Repository
 
         public IEnumerable<JobInformation> GetJobInformation()
         {
-            return _context.JobInformations;
+            return _context.JobInformations.Include(x=>x.Employee).Include(y=>y.Position);
         }
 
         public JobInformation GetOneJobInformation(Guid id)
-        {
+        { 
             return _context.JobInformations.Find(id);
 
         }
@@ -47,9 +51,9 @@ namespace Infrastructures.Repository
         public JobInformation UpdateJobInformation(Guid id, JobInformation jobInformation)
         {
             var existJobInformation = _context.JobInformations.Find(id);
-            existJobInformation.EmployeeId = jobInformation.EmployeeId;
-            existJobInformation.PositinId = jobInformation.PositinId;
-            existJobInformation.Remark = jobInformation.Remark;
+            MappJobInformation mappJobInformation = new MappJobInformation();
+            existJobInformation = mappJobInformation.mappToJobInformationInstance(existJobInformation, jobInformation);
+            existJobInformation.UpdatedAt = DateTime.Now;
             _context.Entry(existJobInformation).State = EntityState.Modified;
             _context.SaveChanges();
             return existJobInformation;

@@ -1,5 +1,6 @@
 ﻿using Applications.Dtos;
 using Applications.Interfaces;
+using Applications.Mapping;
 using Domains.Entities;
 using Domains.Interface;
 using System;
@@ -19,12 +20,9 @@ namespace Applications.Services
         }
         public JobInformationItem AddJobInformation(JobInformationItem jobInformationItem)
         {
-            JobInformation jobInformation = new JobInformation();
-            jobInformation.EmployeeId= jobInformationItem.EmployeeId;
-            jobInformation.PositinId = jobInformationItem.PositinId;
-            jobInformation.Remark = jobInformationItem.Remark;
+            MappJobInformation mappJobInformation = new MappJobInformation();
 
-            _iJobInformation.AddJobInformation(jobInformation);
+            _iJobInformation.AddJobInformation(mappJobInformation.mappToJobInformation(jobInformationItem));
             return jobInformationItem;
         }
         public string DeleteJobInformation(Guid id)
@@ -42,23 +40,14 @@ namespace Applications.Services
         }
         public JobInformationItem GetOneJobInformation(Guid id)
         {
-            JobInformationItem jobInformationItem = new JobInformationItem();
-            JobInformation jobInformation = new JobInformation();
-            jobInformation = _iJobInformation.GetOneJobInformation(id);
-            jobInformationItem.EmployeeId = jobInformation.EmployeeId;
-            jobInformationItem.PositinId = jobInformation.PositinId;
-            jobInformationItem.Remark = jobInformation.Remark;
-            return jobInformationItem;
+            MappJobInformation mappJobInformation = new MappJobInformation();
+            return mappJobInformation.mappToJobInformationItem(_iJobInformation.GetOneJobInformation(id));
         }
 
         public JobInformationItem UpdateJobInformation(Guid id, JobInformationItem jobInformationItem)
         {
-            JobInformation jobInformation = new JobInformation();
-            jobInformation.EmployeeId = jobInformationItem.EmployeeId;
-            jobInformation.PositinId = jobInformationItem.PositinId;
-            jobInformation.Remark = jobInformationItem.Remark;
-
-            _iJobInformation.UpdateJobInformation(id, jobInformation);
+            MappJobInformation mappJobInformation = new MappJobInformation();
+            _iJobInformation.UpdateJobInformation(id, mappJobInformation.mappToJobInformation(jobInformationItem));
             return jobInformationItem;
         }
 

@@ -20,10 +20,17 @@ namespace Applications.Services
         public EmployeeItem AddEmployee(EmployeeItem employeeItem)
         {
             Employee employee = new Employee();
-            employee.Name = employeeItem.Name;
+
+            employee.FName = employeeItem.FName;
+            employee.LName = employeeItem.LName;
+            employee.MName = employeeItem.MName;
+            employee.Gender = employeeItem.Gender;
             employee.Phone = employeeItem.Phone;
             employee.Email = employeeItem.Email;
-
+            employee.BirtDate = employeeItem.BirtDate;
+            employee.Address = employeeItem.Address;
+            employee.HiredAt = employeeItem.HiredAt;
+            employee.Status = employeeItem.Status;
             _iEmployee.AddEmployee(employee);
             return employeeItem;
         }
@@ -47,19 +54,33 @@ namespace Applications.Services
             EmployeeItem employeeItem = new EmployeeItem();
             Employee employee = new Employee();
             employee = _iEmployee.GetOneEmployee(id);
-            employeeItem.Name = employee.Name;
-            employeeItem.Email = employee.Email;
-            employeeItem.Phone = employee.Phone;
+            employeeItem.FName =employee.FName;
+            employeeItem.LName =employee.LName;
+            employeeItem.MName =employee.MName;
+            employeeItem.Gender = employee.Gender;
+            employeeItem.Phone =employee.Phone;
+            employeeItem.Email =employee.Email;
+            employeeItem.BirtDate =employee.BirtDate;
+            employeeItem.Address =employee.Address;
+            employeeItem.HiredAt = employee.HiredAt;
+            employeeItem.Status = employee.Status;
             return employeeItem;
         }
 
         public EmployeeItem UpdateEmployee(Guid id, EmployeeItem employeeItem)
         {
             Employee employee = new Employee();
-            employee.Name = employeeItem.Name;
+
+            employee.FName = employeeItem.FName;
+            employee.LName = employeeItem.LName;
+            employee.MName = employeeItem.MName;
+            employee.Gender = employeeItem.Gender;
             employee.Phone = employeeItem.Phone;
             employee.Email = employeeItem.Email;
-
+            employee.BirtDate = employeeItem.BirtDate;
+            employee.Address = employeeItem.Address;
+            employee.HiredAt = employeeItem.HiredAt;
+            employee.Status = employeeItem.Status;
             _iEmployee.UpdateEmployee(id, employee);
             return employeeItem;
         }

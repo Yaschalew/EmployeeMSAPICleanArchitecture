@@ -16,6 +16,7 @@ namespace Infrastructures.Repository
         }
         public Employee AddEmployee(Employee employee)
         {
+            employee.CreatedAt = DateTime.Now;
             _context.Employees.Add(employee);
             _context.SaveChanges();
             return employee;
@@ -44,9 +45,17 @@ namespace Infrastructures.Repository
         public Employee UpdateEmployee(Guid id, Employee employee)
         {
             var existEmployee = _context.Employees.Find(id);
-            existEmployee.Name = employee.Name;
-            existEmployee.Email = employee.Email;
-            existEmployee.Phone = employee.Phone;
+
+           existEmployee.FName = employee.FName;
+           existEmployee.LName = employee.LName;
+           existEmployee.MName = employee.MName;
+           existEmployee.Phone = employee.Phone;
+           existEmployee.Email = employee.Email;
+           existEmployee.BirtDate = employee.BirtDate;
+           existEmployee.Address = employee.Address;
+           existEmployee.HiredAt = employee.HiredAt;
+            existEmployee.Status = employee.Status;
+            existEmployee.UpdatedAt = DateTime.Now;
             _context.Entry(existEmployee).State = EntityState.Modified;
             _context.SaveChanges();
             return existEmployee;
