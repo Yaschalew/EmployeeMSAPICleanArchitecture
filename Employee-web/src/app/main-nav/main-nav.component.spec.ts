@@ -8,7 +8,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { MainNavComponent } from './main-nav.component';
-
 describe('ManiNavComponent', () => {
   let component: MainNavComponent;
   let fixture: ComponentFixture<MainNavComponent>;

@@ -18,14 +18,13 @@ constructor(fb: FormBuilder,private _positions:PositionService,private router:Ro
     remark:''
   });
  }
- position:any
- id:string="";
+ 
 
   ngOnInit(): void {
   }
   onSubmit(){
     console.log("Position register")
-    //console.log(this.forms);
+    
     
     this._positions.addPositon(this.forms.value).subscribe(data=>{
       console.log(data);

@@ -3,7 +3,60 @@
 <div style="text-align:right; padding-right: 10px;">
     <a href='./Positions/add-position' >Add Position</a> 
 </div>
-<table>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+        
+          <!-- Phone Column -->
+          <ng-container matColumnDef="salary">
+            <th mat-header-cell *matHeaderCellDef> Salary </th>
+            <td mat-cell *matCellDef="let element"> {{element.salary}} </td>
+          </ng-container>
+        
+          <!-- Email Column -->
+          <ng-container matColumnDef="remark">
+            <th mat-header-cell *matHeaderCellDef> Remark </th>
+            <td mat-cell *matCellDef="let element"> {{element.remark}} </td>
+          </ng-container>
+          <ng-container matColumnDef="action" >
+            <th mat-header-cell *matHeaderCellDef> Action </th>
+            <td mat-cell *matCellDef="let element"> 
+                <button style="border-style: none; background-color: white;" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                          <a  routerLink="edit-position/ {{element.id}}" style="text-decoration: none;">
+                            <mat-icon >edit</mat-icon>
+                            <span> Edit</span>
+                        </a>
+                    </button>
+                    <button mat-menu-item>                     
+                        <a routerLink="detail-position/ {{element.id}}" style="text-decoration: none;">
+                            <mat-icon>visibility</mat-icon>
+                           <span>Details  </span>
+                        </a>
+                    
+                    </button>
+                    <button mat-menu-item (click)="openDialog(element.id)">
+                      <mat-icon>delete</mat-icon>
+                      <span>Delete</span>
+                    </button>
+                  </mat-menu>
+
+            </td>
+          </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+<!--<table>
     <tr>
         <th>#</th>
         <th>Name</th>
@@ -17,10 +70,15 @@
         <td> {{position.salary}}</td>
         <td>{{position.remark}}</td>
         <td>
-            <a href="edit-position" style="padding-right: 10px;">Edit</a>
-            <a href="detail-position" style="padding-right: 10px;">Details</a>
-            <a href="delete-position" >Delete</a>
+            <a href="./Positions/edit-position/{{position.id }}" style="padding-right: 10px;">Edit</a>
+            <a href="./Positions/detail-position/{{position.id }}" style="padding-right: 10px;">Details</a>
+           
+            <button mat-menu-item (click)="openDialog(position.id)">
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
+              </button>
         </td>
     </tr>
-</table>
+</table>-->
+
 </div>  
