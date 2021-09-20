@@ -6,6 +6,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
+import { EmployeeService } from '../services/employee.service';
+import { EmployeeDeleteComponent } from './employee-delete/employee-delete.component';
+
 @Component({
   selector: 'app-employees',
   templateUrl: './employees.component.html',
