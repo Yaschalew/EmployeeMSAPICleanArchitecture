@@ -17,7 +17,13 @@ export class PositionService {
     return this._http.post(this.url,position);
 
   }
-  editPosition(id:string,position:any){
+  editPosition(position:any,id:string){
     return this._http.patch(this.url+'/'+id,position);
+  }
+  deletePosition(id:string){
+    return this._http.delete(this.url+"/"+id);
+  }
+  getPositionId(id:string){
+    return this._http.get(this.url+"/"+id);
   }
 }

@@ -1,3 +1,4 @@
+import { MatDialogModule } from '@angular/material/dialog';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -32,8 +33,8 @@ import {MatTableModule} from '@angular/material/table';
     MatListModule,
     FormsModule,
     ReactiveFormsModule,
-    MatTableModule
-   
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

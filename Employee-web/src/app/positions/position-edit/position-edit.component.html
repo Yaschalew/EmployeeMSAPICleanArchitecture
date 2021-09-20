@@ -1,1 +1,14 @@
 <p>position-edit works!</p>
+<Div>
+    <P>Edit Position</P>
+    <Form [formGroup]="forms" (ngSubmit)='onSubmit()'>
+        <input type="text" formControlName="name" placeholder="Edit name">
+        <br>
+        <input type="text" formControlName="salary" placeholder="Edit salary">
+        <br>
+        <input type="text" formControlName="remark" placeholder="Edit position">
+        <br>
+        <input type="submit" value="Submit">
+
+    </Form>
+</Div>

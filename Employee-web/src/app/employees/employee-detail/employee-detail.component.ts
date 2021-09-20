@@ -22,8 +22,8 @@ export class EmployeeDetailComponent implements OnInit {
     this._employeeService.getEmployeeId(this.id).subscribe((data:any)=>{
       this.employee=data;
       this.patchValues(data);
-      this.forms.value.name=this.employee.name;
-      console.log(this.employee.name);
+     // this.forms.value.name=this.employee.name;
+     // console.log(this.employee.name);
     });
    }
 

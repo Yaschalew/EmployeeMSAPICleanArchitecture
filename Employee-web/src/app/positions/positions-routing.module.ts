@@ -15,13 +15,13 @@ const routes: Routes = [
     path:'add-position',component : PositionAddComponent
   },
   {
-    path: 'edit-position',component:PositionEditComponent
+    path: 'edit-position/:id',component:PositionEditComponent
   },
   {
-    path:'delete-position',component:PositionDeleteComponent
+    path:'delete-position/:id',component:PositionDeleteComponent
   },
   {
-    path :'detail-position',component:PositionDetailComponent
+    path :'detail-position/:id',component:PositionDetailComponent
   }
 
 ];

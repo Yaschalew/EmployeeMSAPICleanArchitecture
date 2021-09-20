@@ -1,1 +1,15 @@
 <p>position-detail works!</p>
+<div>
+    <h2>Employee's Details</h2>
+    <form [formGroup]="forms" (ngSubmit)="onSubmit()">
+   <input type="text" formControlName="name" readonly placeholder="enter position name">
+   <br>
+   <input type="text" formControlName="salary" readonly placeholder="enter salary">
+   <br>
+   <input type="text" formControlName="remark" readonly placeholder="enter remark">
+   <div style="padding-top: 20px;">
+    <input type="submit" value="<-- Back" />
+   </div>
+    </form>
+</div>
+
