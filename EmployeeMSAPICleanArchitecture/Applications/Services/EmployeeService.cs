@@ -17,7 +17,7 @@ namespace Applications.Services
         {
             _iEmployee = iEmployee;
         }
-        public EmployeeItem AddEmployee(EmployeeItem employeeItem)
+        public Guid AddEmployee(EmployeeItem employeeItem)
         {
             Employee employee = new Employee();
 
@@ -31,8 +31,8 @@ namespace Applications.Services
             employee.Address = employeeItem.Address;
             employee.HiredAt = employeeItem.HiredAt;
             employee.Status = employeeItem.Status;
-            _iEmployee.AddEmployee(employee);
-            return employeeItem;
+           return _iEmployee.AddEmployee(employee);
+           
         }
 
         public string DeleteEmployee(Guid id)

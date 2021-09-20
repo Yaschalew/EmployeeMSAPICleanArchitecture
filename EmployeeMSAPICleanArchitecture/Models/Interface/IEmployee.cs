@@ -9,7 +9,7 @@ namespace Models.Interface
 {
    public interface IEmployee
     {
-        public Employee AddEmployee(Employee employee);
+        public Guid AddEmployee(Employee employee);
         public IEnumerable<Employee> GetEmployee();
         public Employee UpdateEmployee(Guid id,Employee employee);
         public Employee GetOneEmployee(Guid id);

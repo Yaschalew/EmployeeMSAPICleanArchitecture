@@ -1,25 +1,30 @@
 ﻿using Infrastructures.Context;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Models.Entities;
 using Models.Interface;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Infrastructures.Repository
 {
     public class EmployeeRepository : IEmployee
     {
         private readonly AppDbContext _context;
-        public EmployeeRepository(AppDbContext context)
+        private UserManager<IdentityUser> _userManager;
+        public EmployeeRepository(AppDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
-        public Employee AddEmployee(Employee employee)
+        public Guid AddEmployee(Employee employee)
         {
             employee.CreatedAt = DateTime.Now;
             _context.Employees.Add(employee);
             _context.SaveChanges();
-            return employee;
+
+            return employee.Id;
         }
 
         public string DeleteEmployee(Guid id)

@@ -51,6 +51,6 @@ export class EmployeeDetailComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(){
-    this.router.navigateByUrl("");
+    this.router.navigateByUrl("employees");
   }
 }

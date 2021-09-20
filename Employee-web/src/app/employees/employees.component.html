@@ -4,7 +4,7 @@
     </div>
 
     <div style="text-align: right; padding-right: 5%;padding-bottom: 1%; ">
-        <a mat-raised-button href="add-employee" style="color: SteelBlue;;">
+        <a mat-raised-button href="employees/add-employee" style="color: SteelBlue;;">
          <span style="padding-top: 10px;">
           <mat-icon fontSet="fa"  fontIcon="fa-plus"></mat-icon>
           <span> Add Employee</span>
@@ -64,25 +64,25 @@
             <th mat-header-cell *matHeaderCellDef> Action </th>
             <td mat-cell *matCellDef="let element">
                 <button style="border-style: none; background-color: white;" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                    <mat-icon>more_vert</mat-icon>
+                    <mat-icon style="color: teal;">more_vert</mat-icon>
                   </button>
                   <mat-menu #menu="matMenu">
                     <button mat-menu-item>
                           <a  routerLink="edit-employee/ {{element.id}}" style="text-decoration: none;">
-                            <mat-icon fontSet="fa"  fontIcon="fa-pen"></mat-icon>
-                            <span> Edit</span>
+                            <mat-icon fontSet="fa"  fontIcon="fa-pen" style="color: teal;"></mat-icon>
+                            <span style="color: teal;"> Edit</span>
                         </a>
                     </button>
                     <button mat-menu-item>
                         <a routerLink="detail-employee/ {{element.id}}" style="text-decoration: none;">
-                          <mat-icon fontSet="fa"  fontIcon="fa-eye"></mat-icon>
-                           <span>Details  </span>
+                          <mat-icon fontSet="fa"  fontIcon="fa-eye" style="color: teal;"></mat-icon>
+                           <span style="color: teal;">Details  </span>
                         </a>
 
                     </button>
                     <button mat-menu-item (click)="openDialog(element.id)">
-                      <mat-icon fontSet="fa"  fontIcon="fa-trash"></mat-icon>
-                      <span>Delete</span>
+                      <mat-icon fontSet="fa"  fontIcon="fa-trash" style="color: tomato;"></mat-icon>
+                      <span class="text-red-400">Delete</span>
                     </button>
                   </mat-menu>
 
