@@ -38,19 +38,19 @@
                   <mat-menu #menu="matMenu">
                     <button mat-menu-item>
                           <a  routerLink="edit-position/ {{element.id}}" style="text-decoration: none;">
-                            <mat-icon >edit</mat-icon>
+                            <mat-icon fontSet="fa"  fontIcon="fa-pen" style="color: teal;"></mat-icon>
                             <span> Edit</span>
                         </a>
                     </button>
                     <button mat-menu-item>                     
                         <a routerLink="detail-position/ {{element.id}}" style="text-decoration: none;">
-                            <mat-icon>visibility</mat-icon>
+                            <mat-icon fontSet="fa"  fontIcon="fa-eye" style="color: teal;"></mat-icon>
                            <span>Details  </span>
                         </a>
                     
                     </button>
                     <button mat-menu-item (click)="openDialog(element.id)">
-                      <mat-icon>delete</mat-icon>
+                        <mat-icon fontSet="fa"  fontIcon="fa-trash" style="color: tomato;"></mat-icon>
                       <span>Delete</span>
                     </button>
                   </mat-menu>
