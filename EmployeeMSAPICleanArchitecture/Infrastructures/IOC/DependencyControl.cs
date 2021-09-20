@@ -1,6 +1,7 @@
 ﻿using Applications.Interfaces;
 using Applications.Services;
 using Domains.Interface;
+using IdentityAuth.Services;
 using Infrastructures.Repository;
 using Microsoft.Extensions.DependencyInjection;
 using Models.Interface;
@@ -30,7 +31,9 @@ namespace Infrastructures.IOC
             services.AddScoped<IPosition, PositionRepository>(); 
             services.AddScoped<IpositionService, PositionServices>();
 
-
+            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IAuth, AuthRepository>();
+            
 
         }
     }

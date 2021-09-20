@@ -1,5 +1,8 @@
 ﻿using Applications.Interfaces;
 using Applications.ViewModels;
+using IdentityAuth.Dtos;
+using IdentityAuth.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,18 +14,24 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class EmployeeController : ControllerBase
     {
 
         private readonly IemployeeService _iemployeeService;
-        public EmployeeController(IemployeeService iemployeeService)
+        private readonly IAuthService _iAuthService;
+        public EmployeeController(IemployeeService iemployeeService, IAuthService iAuthService)
         {
             _iemployeeService = iemployeeService;
+            _iAuthService = iAuthService;
         }
         [HttpPost]
-        public EmployeeItem AddEmployee(EmployeeItem employeeItem)
+        public Task<Boolean> AddEmployee(EmployeeItem employeeItem)
         {
-            return _iemployeeService.AddEmployee(employeeItem);
+           var Id=  _iemployeeService.AddEmployee(employeeItem);
+            return _iAuthService.RegisterUser(Id,employeeItem.Email, employeeItem.Email);
+
+
         }
         [HttpGet]
         public EmployeeViewModel GetEmployee()

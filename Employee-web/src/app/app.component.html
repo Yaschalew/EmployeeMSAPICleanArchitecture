@@ -1,8 +1,11 @@
 
-<app-main-nav>
-
+<app-main-nav *ngIf="auth">
     <div style="padding-left: 3%; padding-top: 2%;">
-<router-outlet></router-outlet>
+        <router-outlet></router-outlet>
+        
     </div>
 </app-main-nav>
-
+<div *ngIf="!auth">
+    <app-login>
+    </app-login>
+</div>
