@@ -35,7 +35,7 @@ export class AddpopupComponent implements OnInit {
       {
         this.router.navigateByUrl("educations");
       });
-    }
+  }
 
 
   }
