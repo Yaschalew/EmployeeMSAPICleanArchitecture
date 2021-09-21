@@ -56,7 +56,7 @@ employee:any;
   onSubmit(){
     console.log(this.forms.value);
     this._employeeService.editEmployee(this.forms.value,this.id).subscribe((data:any)=>{
-      this.router.navigateByUrl("");
+      this.router.navigateByUrl("employees");
     })
 
   }

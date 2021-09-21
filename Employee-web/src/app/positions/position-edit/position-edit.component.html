@@ -1,1 +1,39 @@
 <p>position-edit works!</p>
+<Div>
+    <P>Edit Position</P>
+    <Form [formGroup]="forms" (ngSubmit)='onSubmit()'>
+        <div>
+    
+            <ng-container  >
+                <mat-form-field style="padding-right: 13px;" >
+                    <mat-label>Position name</mat-label>
+                    <input matInput formControlName="name" placeholder="enter position">
+                  </mat-form-field>
+               </ng-container>
+        
+        </div>
+        <div>
+    
+            <ng-container  >
+                <mat-form-field style="padding-right: 13px;" >
+                    <mat-label>Salary</mat-label>
+                    <input matInput formControlName="salary" placeholder="enter salary">
+                  </mat-form-field>
+               </ng-container>
+        
+        </div>
+        
+        <div>
+    
+            <ng-container  >
+                <mat-form-field style="padding-right: 13px;" >
+                    <mat-label>Role</mat-label>
+                    <input matInput formControlName="remark" placeholder="enter role">
+                  </mat-form-field>
+               </ng-container>
+        
+        </div>
+        <input type="submit" class="bg-blue-400 rounded text-gray-50 hover:bg-indigo-300 w-40" value="Submit">
+
+    </Form>
+</Div>
