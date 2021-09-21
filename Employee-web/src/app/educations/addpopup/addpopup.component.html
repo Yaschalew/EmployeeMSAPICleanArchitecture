@@ -1,8 +1,64 @@
-<mat-dialog-content class="mat-typography">
-  <p style="color: red;"> Are you sure you want to delete this item?</p>
-</mat-dialog-content>
-<mat-dialog-actions align="end">
- <button mat-button mat-dialog-close style="margin-right: 5px;">Cancel</button>
+<div style="padding-left: 10%;">
+  <h2>Add Education</h2>
+  <form [formGroup]="forms" (ngSubmit)="onSubmit()">
+      <div>
+      <ng-container  >
+          <mat-form-field style="padding-right: 13px;" >
+              <mat-label>Employee ID</mat-label>
+              <input matInput formControlName="EmployeeId" required placeholder="enter employee id">
+            </mat-form-field>
+         </ng-container>
 
- <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Delete</button>
-</mat-dialog-actions>
+         <ng-container >
+          <mat-form-field>
+              <mat-label>Level</mat-label>
+              <mat-select disableRipple formControlName="level" required>
+                <mat-option value="Certficate">Certficate</mat-option>
+                <mat-option value="Diploma">Diploma</mat-option>
+                <mat-option value="Bachelor">Bachelor Degree</mat-option>
+                <mat-option value="Masters">Masters</mat-option>
+                <mat-option value="PHD">PHD</mat-option>
+              </mat-select>
+            </mat-form-field>
+         </ng-container>
+
+
+             <ng-container >
+              <mat-form-field style="padding-right: 13px;">
+                  <mat-label>Graduated Year</mat-label>
+                  <input matInput formControlName="graduated_year" required [matDatepicker]="picker2">
+                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                  <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+             </ng-container>
+              </div>
+
+              <div>
+                  <ng-container >
+                      <mat-form-field style="padding-right: 13px;">
+                          <mat-label >GPA</mat-label>
+                          <input matInput formControlName="gpa" placeholder="ente gpa" required>
+                        </mat-form-field>
+                     </ng-container>
+                      <ng-container >
+                          <mat-form-field style="padding-right: 13px;">
+                              <mat-label>Institue</mat-label>
+                              <input matInput formControlName="institute" placeholder="enter institute name" required>
+                            </mat-form-field>
+                         </ng-container>
+                          <ng-container >
+                              <mat-form-field style="padding-right: 13px;">
+                                  <mat-label>Address</mat-label>
+                                  <input matInput formControlName="address" placeholder="enter address" required>
+                                </mat-form-field>
+                             </ng-container>
+                          </div>
+                          <div>
+
+
+
+                                  </div>
+
+ <input type="submit"  class="bg-blue-400 rounded text-gray-50 hover:bg-indigo-300 w-40 h-6" value="Submit" />
+  </form>
+</div>
