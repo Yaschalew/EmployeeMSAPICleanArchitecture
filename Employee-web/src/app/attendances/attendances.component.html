@@ -1,13 +1,13 @@
 
 <div>
   <div style="text-align: right; padding-right: 5%;padding-bottom: 1%; ">
-      <a mat-raised-button href="add-employee" style="color: SteelBlue;;">
+      <a mat-raised-button href="attendances/attendance-add" style="color: SteelBlue;;">
        <span style="padding-top: 10px;">
         <mat-icon fontSet="fa"  fontIcon="fa-plus"></mat-icon>
-        <span> Add Employee</span></span>
+        <span> Add Attendance</span></span>
       </a>
   </div>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="attendances" class="mat-elevation-z8">
 
       <!--- Note that these columns can be defined in any order.
             The actual rendered columns are set as a property on the row definition" -->

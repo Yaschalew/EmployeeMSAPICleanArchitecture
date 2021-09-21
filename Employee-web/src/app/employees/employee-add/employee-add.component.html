@@ -1,87 +1,87 @@
 <div style="padding-left: 10%;">
-    <h2>Add Employee</h2>
-    <form [formGroup]="forms" (ngSubmit)="onSubmit()">
-        <div>
-        <ng-container  >
-            <mat-form-field style="padding-right: 13px;" >
-                <mat-label>First name</mat-label>
-                <input matInput formControlName="fName" placeholder="enter first name">
-              </mat-form-field>
-           </ng-container>
+  <h2>Add Employee</h2>
+  <form [formGroup]="forms" (ngSubmit)="onSubmit()">
+    <div>
+      <ng-container>
+        <mat-form-field style="padding-right: 13px;">
+          <mat-label>First name</mat-label>
+          <input matInput formControlName="fName" placeholder="enter first name">
+        </mat-form-field>
+      </ng-container>
 
-            <ng-container >
-                <mat-form-field style="padding-right: 13px;">
-                    <mat-label>Last name</mat-label>
-                    <input matInput formControlName="lName" placeholder="enter last name">
-                  </mat-form-field>
-               </ng-container>
-           
-                <ng-container >
-                    <mat-form-field style="padding-right: 13px;">
-                        <mat-label>Middle Name</mat-label>
-                        <input matInput formControlName="mName" placeholder="enter middle name">
-                      </mat-form-field>
-                   </ng-container>
-                </div>
-                <div class="py-4">
-                    <label >Gender</label>
-                    <mat-radio-group formControlName="gender" aria-label="Select an option">
-                        <mat-radio-button value="Male" class="px-5">Male</mat-radio-button>
-                        <mat-radio-button value="Female" class="px-5">Female</mat-radio-button>
-                        <mat-radio-button value="Other" class="px-5">Other</mat-radio-button>
-                      </mat-radio-group>
-                </div>
-                <div>
-                    <ng-container >
-                        <mat-form-field style="padding-right: 13px;">
-                            <mat-label >Phone</mat-label>
-                            <input matInput formControlName="phone" placeholder="enter phone">
-                          </mat-form-field>
-                       </ng-container>
-                        <ng-container >
-                            <mat-form-field style="padding-right: 13px;">
-                                <mat-label>Email</mat-label>
-                                <input matInput formControlName="email" placeholder="enter email">
-                              </mat-form-field>
-                           </ng-container>
-                            <ng-container >
-                                <mat-form-field style="padding-right: 13px;">
-                                    <mat-label>Address</mat-label>
-                                    <input matInput formControlName="address" placeholder="enter address">
-                                  </mat-form-field>
-                               </ng-container>
-                            </div>
-                            <div>
-                                <ng-container >
-                                    <mat-form-field style="padding-right: 13px;">
-                                        <mat-label>Birth Date</mat-label>
-                                        <input matInput formControlName="birtDate" [matDatepicker]="picker">
-                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                        <mat-datepicker #picker></mat-datepicker>
-                                      </mat-form-field>
-                                   </ng-container>
+      <ng-container>
+        <mat-form-field style="padding-right: 13px;">
+          <mat-label>Last name</mat-label>
+          <input matInput formControlName="lName" placeholder="enter last name">
+        </mat-form-field>
+      </ng-container>
 
-                                   <ng-container >
-                                    <mat-form-field style="padding-right: 13px;">
-                                        <mat-label>Hired Date</mat-label>
-                                        <input matInput formControlName="hiredAt" [matDatepicker]="picker2">
-                                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                                        <mat-datepicker #picker2></mat-datepicker>
-                                      </mat-form-field>
-                                   </ng-container>
-                                    <ng-container >
-                                        <mat-form-field>
-                                            <mat-label>Status</mat-label>
-                                            <mat-select disableRipple formControlName="status">
-                                              <mat-option value="Active">Active</mat-option>
-                                              <mat-option value="Inactive">Inactive</mat-option>
-                                              <mat-option value="Terminated">Terminated</mat-option>
-                                              <mat-option value="Suspended">Suspended</mat-option>
-                                            </mat-select>
-                                          </mat-form-field>
-                                       </ng-container>
-                                    </div>
-                                    
-   <input type="submit"  class="bg-blue-400 rounded text-gray-50 hover:bg-indigo-300 w-40" value="Submit" />
-    </form>
+      <ng-container>
+        <mat-form-field style="padding-right: 13px;">
+          <mat-label>Middle Name</mat-label>
+          <input matInput formControlName="mName" placeholder="enter middle name">
+        </mat-form-field>
+      </ng-container>
+    </div>
+    <div class="py-4">
+      <label>Gender</label>
+      <mat-radio-group formControlName="gender" aria-label="Select an option">
+        <mat-radio-button value="Male" class="px-5">Male</mat-radio-button>
+        <mat-radio-button value="Female" class="px-5">Female</mat-radio-button>
+        <mat-radio-button value="Other" class="px-5">Other</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <ng-container>
+        <mat-form-field style="padding-right: 13px;">
+          <mat-label>Phone</mat-label>
+          <input matInput formControlName="phone" placeholder="enter phone">
+        </mat-form-field>
+      </ng-container>
+      <ng-container>
+        <mat-form-field style="padding-right: 13px;">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" placeholder="enter email">
+        </mat-form-field>
+      </ng-container>
+      <ng-container>
+        <mat-form-field style="padding-right: 13px;">
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="address" placeholder="enter address">
+        </mat-form-field>
+      </ng-container>
+    </div>
+    <div>
+      <ng-container>
+        <mat-form-field style="padding-right: 13px;">
+          <mat-label>Birth Date</mat-label>
+          <input matInput formControlName="birtDate" [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </ng-container>
+
+      <ng-container>
+        <mat-form-field style="padding-right: 13px;">
+          <mat-label>Hired Date</mat-label>
+          <input matInput formControlName="hiredAt" [matDatepicker]="picker2">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </ng-container>
+      <ng-container>
+        <mat-form-field>
+          <mat-label>Status</mat-label>
+          <mat-select disableRipple formControlName="status">
+            <mat-option value="Active">Active</mat-option>
+            <mat-option value="Inactive">Inactive</mat-option>
+            <mat-option value="Terminated">Terminated</mat-option>
+            <mat-option value="Suspended">Suspended</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </ng-container>
+    </div>
+
+    <input type="submit" class="bg-blue-400 rounded text-gray-50 hover:bg-indigo-300 w-40" value="Submit" />
+  </form>
 </div>

@@ -14,10 +14,12 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import { NgModule } from '@angular/core';
+import { AttendanceAddComponent } from './attendance-add/attendance-add.component';
 
 @NgModule({
   declarations: [
-    AttendancesComponent
+    AttendancesComponent,
+    AttendanceAddComponent
   ],
   imports: [
     CommonModule,
