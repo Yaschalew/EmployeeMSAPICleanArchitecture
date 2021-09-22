@@ -1,7 +1,7 @@
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -12,6 +12,8 @@ import { PositionDeleteComponent } from './position-delete/position-delete.compo
 import { PositionDetailComponent } from './position-detail/position-detail.component';
 import { PositionEditComponent } from './position-edit/position-edit.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -32,7 +34,11 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatTableModule,
     MatMenuModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatFormFieldModule,
+    MatSnackBarModule,
+    MatInputModule,
+
   ]
 })
 export class PositionsModule { }

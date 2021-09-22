@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
 
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { EmployeeDeleteComponent } from './employee-delete/employee-delete.component';
 import { EmployeeService } from '../services/employee.service';
 import { MatDialog } from '@angular/material/dialog';

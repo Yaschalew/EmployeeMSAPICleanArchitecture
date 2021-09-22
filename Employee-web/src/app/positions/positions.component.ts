@@ -15,7 +15,7 @@ displayedColumns: string[] = ['name', 'salary', 'remark','action'];
 positionsList:any;
 dataSource:any;
 id:any;
-  constructor(private _positions:PositionService,public dialog: MatDialog,private router:Router) { }
+  constructor(private _snackBar:MatSnackBar, private _positions:PositionService,public dialog: MatDialog,private router:Router) { }
 
   ngOnInit(): void {
     this._positions.getPositions().subscribe((data:any)=>{
@@ -40,7 +40,7 @@ id:any;
           console.log(data);
           
         })
-        //this._snackBar.open("Position is deleted.","Ok");
+        this._snackBar.open("Position is deleted.","Ok");
         location.reload();
       }
      
