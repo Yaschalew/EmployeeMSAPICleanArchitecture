@@ -18,6 +18,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
+import {MatPaginatorModule} from '@angular/material/paginator';
 @NgModule({
   declarations: [
     EmployeesComponent,
@@ -40,7 +41,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    MatPaginatorModule
   ]
 })
 export class EmployeesModule { }

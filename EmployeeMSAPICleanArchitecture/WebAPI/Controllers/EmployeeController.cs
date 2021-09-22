@@ -1,4 +1,5 @@
-﻿using Applications.Interfaces;
+﻿using Applications.Dtos.Response;
+using Applications.Interfaces;
 using Applications.ViewModels;
 using IdentityAuth.Dtos;
 using IdentityAuth.Services;
@@ -34,10 +35,21 @@ namespace WebAPI.Controllers
 
         }
         [HttpGet]
+        [Route("employee")]
         public EmployeeViewModel GetEmployee()
         {
             return _iemployeeService.GetEmployee();
         }
+
+
+        [HttpGet]
+        public async Task<ResponseDto<EmployeeItem>> Get(Guid? id, string searchKey, int? pageindex, int? pageSize)
+        {
+            return await _iemployeeService.GetWithPredicate(id, searchKey, pageindex, pageSize);
+
+        }
+
+
         [HttpPatch("{id}")]
         public EmployeeItem UpdateEmployee(Guid id, EmployeeItem employeeItem)
         {

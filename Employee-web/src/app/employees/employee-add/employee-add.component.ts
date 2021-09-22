@@ -38,7 +38,8 @@ forms:FormGroup;
 
     this._employees.addEmployee(this.forms.value).subscribe(data=>{
       console.log(data);
-      this.router.navigateByUrl("employees");
+      window.location.reload();
+      //this.router.navigateByUrl("employees");
     });
 
   }

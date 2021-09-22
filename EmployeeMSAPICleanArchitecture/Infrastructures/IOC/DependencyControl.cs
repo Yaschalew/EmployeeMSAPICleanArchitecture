@@ -4,6 +4,7 @@ using Domains.Interface;
 using IdentityAuth.Services;
 using Infrastructures.Repository;
 using Microsoft.Extensions.DependencyInjection;
+using Models.Entities;
 using Models.Interface;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace Infrastructures.IOC
         public static void RegisterServices(IServiceCollection services)
         {
            
-            services.AddScoped<IEmployee, EmployeeRepository>();
+            services.AddScoped<IEmployee<Employee>, EmployeeRepository>();
             services.AddScoped<IemployeeService, EmployeeService>();
             services.AddScoped<IEducation, EducationRepositiory>();
 
