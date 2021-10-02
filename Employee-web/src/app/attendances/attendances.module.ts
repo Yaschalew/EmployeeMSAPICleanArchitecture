@@ -1,5 +1,6 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { AttendanceAddComponent } from './attendance-add/attendance-add.component';
 import { AttendancesComponent } from './attendances.component';
 import { AttendancesRoutingModule } from './attendances-routing.module';
 import { CommonModule } from '@angular/common';
@@ -14,12 +15,15 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import { NgModule } from '@angular/core';
-import { AttendanceAddComponent } from './attendance-add/attendance-add.component';
+import { AttendanceEditComponent } from './attendance-edit/attendance-edit.component';
+import { AttendanceFormComponent } from './attendance-form/attendance-form.component';
 
 @NgModule({
   declarations: [
     AttendancesComponent,
-    AttendanceAddComponent
+    AttendanceAddComponent,
+    AttendanceEditComponent,
+    AttendanceFormComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +39,7 @@ import { AttendanceAddComponent } from './attendance-add/attendance-add.componen
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
   ]
 })
 export class AttendancesModule { }

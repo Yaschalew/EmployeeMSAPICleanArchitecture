@@ -1,7 +1,6 @@
 ﻿using Domains.Entities;
 using Infrastructures.Context;
 using Microsoft.EntityFrameworkCore;
-using Models.Entities;
 using Models.Interface;
 using System;
 using System.Collections.Generic;

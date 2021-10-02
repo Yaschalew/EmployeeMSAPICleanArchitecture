@@ -1,5 +1,5 @@
-﻿using Applications.Interfaces;
-using Applications.ViewModels;
+﻿using Applications.Dtos;
+using Applications.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;

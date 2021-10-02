@@ -1,26 +1,152 @@
-import { HttpClient } from '@angular/common/http';
+import * as moment from 'moment';
+
+import { Attendance, mapAttendance } from '../models/attendance.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import { Employee } from '../models/employees.model';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+const isDate = (s: any) => moment(s, moment.ISO_8601, true).isValid();
+
+function stringToDate(obj: any){
+  return Object.keys(obj)
+  .filter((key: any) => obj[key]  && isDate(obj[key]))
+  .map((key: any) => {obj[key] = moment(obj[key]).toDate()})
+}
+
+export function TransformDate(target: any, key: any, descriptor: any){
+  const originalMethod = descriptor.value
+  descriptor.value = function () {
+    return originalMethod.apply(this).pipe(
+      map((obj: any) => Object.assign({}, obj, stringToDate(obj)))
+    )
+  }
+  return descriptor
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class AttendanceService {
 
-  url:string='https://localhost:5001/api/Attendance';
-  constructor(private _http:HttpClient) { }
-  getAll(){
-   return this._http.get(this.url);
+  employees: Employee[] = []
+
+  url: string = 'http://localhost:4001/attendances';
+  url1: string = 'http://localhost:4001/employees'
+
+  httpOptions = {
+    'headers': new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
   }
-  create(attendance:any){
-    return this._http.post(this.url,attendance);
+
+  constructor(private _http: HttpClient) {
+    this.getEmployees()
+    .subscribe((data: any) => {
+      this.employees = data
+    })
+   }
+
+  getEmployees(): Observable<Employee> {
+    return this._http.get<Employee>(this.url1)
   }
-  edit(attendance:any,id:string){
-    return this._http.patch(this.url+'/'+id,attendance);
+
+  @TransformDate
+  getAll(): Observable<Attendance> {
+    return this._http.get<Attendance>(this.url)
   }
-  getById(id:string){
-    return this._http.get(this.url+"/"+id);
+
+  @TransformDate
+  getById(id: any): Observable<Attendance> {
+    return this._http.get<Attendance>(this.url + "/" + id);
   }
-  erase(id:string){
-    return this._http.delete(this.url+"/"+id);
+
+  @TransformDate
+  create(attendance: any): Observable<Attendance> {
+    return this._http.post<Attendance>(
+      this.url,
+      JSON.stringify(attendance),
+      this.httpOptions
+    );
+  }
+
+  @TransformDate
+  edit(attendance: any, id: string): Observable<Attendance> {
+    return this._http.put<Attendance>(
+      this.url,
+      JSON.stringify(attendance),
+      this.httpOptions
+    );
+  }
+
+  @TransformDate
+  erase(id: string) {
+    return this._http.delete<Attendance>(this.url + "/" + id, this.httpOptions);
+  }
+
+  // private convertToEmployee(data: any) {
+  //   let response: Employee[] = []
+  //   for (let i = 0; i < data.length; i++) {
+  //     let newItem: Employee = data[i]
+  //     response = [...response, newItem]
+  //   }
+  //   return response
+  // }
+  // private convertToAttendance(data: any) {
+  //   let response: Attendance[] = []
+  //   for (let i = 0; i < data.length; i++) {
+  //     let newItem: Attendance = data[i]
+  //     response = [...response, newItem]
+  //   }
+  //   return response
+  // }
+
+  private convertTo<T>(data: any) {
+    let response: T
+    if(data.loginDateTime === null
+      || data.loginDateTime === undefined
+      || data.loginDateTime === ''){
+      console.log('Attendance')
+      response = mapAttendance(data)
+    }
+    else{
+      response = data
+    }
+
+    return response
+  }
+
+  private convertArrayTo<T>(data: any) {
+    let response: T[] = []
+    for (let i = 0; i < data.length; i++) {
+      response = [...response, this.convertTo<T>(data[i])]
+    }
+    return response
+  }
+
+  getEmployeeName(id: string){
+    // console.log('Employee By ID')
+    // console.log(id)
+    let employee: Employee = {} as Employee
+    // this._http.get(this.url1 + "/" + id)
+    // .pipe(
+    //   map((data: any) => {
+    //     return this.convertTo<Employee>(data)
+    //   })
+
+    // )
+    // .subscribe((data: any) => {
+    //   console.log(data)
+    //   employee = this.convertTo<Employee>(data)
+    //   console.log(employee)
+    // })
+    for (let i = 0; i < this.employees.length; i++) {
+      if(this.employees[i].id == id){
+        return this.employees[i].fname + ' ' + this.employees[i].mname + ' ' + this.employees[i].lname
+      }
+    }
+    throw Error('Employee doesnot exist!')
   }
 }

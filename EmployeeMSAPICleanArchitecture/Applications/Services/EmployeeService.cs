@@ -1,12 +1,13 @@
 ﻿using Applications.Interfaces;
-using Applications.ViewModels;
-using Models.Entities;
+using Applications.Dtos;
 using Models.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domains.Entities;
+using Applications.Mappings;
 
 namespace Applications.Services
 {
@@ -19,20 +20,23 @@ namespace Applications.Services
         }
         public EmployeeItem AddEmployee(EmployeeItem employeeItem)
         {
-            Employee employee = new Employee();
+            //Employee employee = new Employee();
 
-            employee.FName = employeeItem.FName;
-            employee.LName = employeeItem.LName;
-            employee.MName = employeeItem.MName;
-            employee.Gender = employeeItem.Gender;
-            employee.Phone = employeeItem.Phone;
-            employee.Email = employeeItem.Email;
-            employee.BirtDate = employeeItem.BirtDate;
-            employee.Address = employeeItem.Address;
-            employee.HiredAt = employeeItem.HiredAt;
-            employee.Status = employeeItem.Status;
-            _iEmployee.AddEmployee(employee);
-            return employeeItem;
+            //employee.FName = employeeItem.FName;
+            //employee.LName = employeeItem.LName;
+            //employee.MName = employeeItem.MName;
+            //employee.Gender = employeeItem.Gender;
+            //employee.Phone = employeeItem.Phone;
+            //employee.Email = employeeItem.Email;
+            //employee.BirtDate = employeeItem.BirtDate;
+            //employee.Address = employeeItem.Address;
+            //employee.HiredAt = employeeItem.HiredAt;
+            //employee.Status = employeeItem.Status;
+            //_iEmployee.AddEmployee(employee);
+            //return employeeItem;
+
+            return _iEmployee.AddEmployee(employeeItem.ToModel()).ToDto();
+
         }
 
         public string DeleteEmployee(Guid id)

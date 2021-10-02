@@ -3,17 +3,10 @@ using Applications.Interfaces;
 using Domains.Entities;
 using Models.Interface;
 using System;
-using Applications.ViewModels;
-using Models.Entities;
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Applications.Services
 {
-   public  class PositionServices : IpositionService
+    public  class PositionServices : IpositionService
    {
         private readonly IPosition _iPosition;
 

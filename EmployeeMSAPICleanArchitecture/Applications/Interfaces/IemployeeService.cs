@@ -1,4 +1,4 @@
-﻿using Applications.ViewModels;
+﻿using Applications.Dtos;
 using System;
 
 namespace Applications.Interfaces

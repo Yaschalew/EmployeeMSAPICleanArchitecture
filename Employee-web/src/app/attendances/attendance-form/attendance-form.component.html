@@ -1,0 +1,89 @@
+<form [formGroup]="forms" (ngSubmit)="onSubmit()">
+  <div>
+    <mat-form-field>
+      <mat-label>Employee</mat-label>
+      <mat-select formControlName="employee" placeholder="select employee name">
+        <ng-container *ngFor="let employee_each of employees">
+          <mat-option value="{{employee_each.id}}">
+            {{employee_each.fname + ' ' + employee_each.mname + ' ' + employee_each.lname}}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div >
+    <ng-container style="display: inline-block">
+      <h3>Log-In</h3>
+      <div>
+        <p>Date and Time</p>
+        <mat-form-field appearance="fill" style="width: 150px;">
+          <input matInput formControlName="loginDate" [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="width: 60px;">
+          <mat-select formControlName="loginHour" placeholder="H">
+            <ng-container *ngFor="let h of numLists(1, 12)">
+              <mat-option value="{{h}}">{{h}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="width: 70px;">
+          <mat-select formControlName="loginMinute" placeholder="mm">
+            <ng-container *ngFor="let h of numLists(0, 59)">
+              <mat-option value="{{h}}">{{h}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field style="width: 280px">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="loginDescription" placeholder="enter logout description"></textarea>
+        </mat-form-field>
+      </div>
+    </ng-container>
+    <ng-container>
+      <h3>Log-Out</h3>
+      <div>
+        <p>Date and Time</p>
+        <mat-form-field appearance="fill" style="width: 150px;">
+          <input matInput formControlName="logoutDate" [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="width: 60px;">
+          <mat-select formControlName="logoutHour" placeholder="H">
+            <ng-container *ngFor="let h of numLists(1, 12)">
+              <mat-option value="{{h}}">{{h}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="width: 70px;">
+          <mat-select formControlName="logoutMinute" placeholder="mm">
+            <ng-container *ngFor="let m of numLists(0, 59)">
+              <mat-option value="{{m}}">{{m}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field style="width: 280px">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="logoutDescription" placeholder="enter login description"></textarea>
+        </mat-form-field>
+      </div>
+    </ng-container>
+    <div>
+      <mat-form-field style="width: 280px">
+        <mat-label>Remark</mat-label>
+        <textarea matInput formControlName="remark" placeholder="enter remark"></textarea>
+      </mat-form-field>
+    </div>
+
+
+  </div>
+
+
+
+  <input type="submit" class="bg-blue-400 rounded text-gray-50 hover:bg-indigo-300 w-40" value="Submit" />
+</form>

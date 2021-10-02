@@ -1,5 +1,4 @@
-﻿using Applications.ViewModels;
-using System;
+﻿using System;
 
 namespace Applications.Dtos
 {
