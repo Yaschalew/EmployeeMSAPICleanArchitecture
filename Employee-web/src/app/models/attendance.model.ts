@@ -1,25 +1,25 @@
 export interface Attendance {
-  id: string | undefined,
-  employee: string,
-  loginDateTime: Date,
+  id: number | undefined,
+  employee: number,
+  loginDateTime: number,
   loginDescription: string,
-  logoutDateTime: Date,
+  logoutDateTime: number,
   logoutDescription: string,
   remark: string,
 }
 
-export function mapAttendance(data: any) {
-  let attendance: Attendance
-  attendance = {
-    id: data.id,
-    employee: data.employee,
-    loginDateTime: new Date(data.loginDateTime),
-    loginDescription: data.loginDescription,
-    logoutDateTime: new Date(data.logoutDateTime),
-    logoutDescription: data.logoutDescription,
-    remark: data.remark,
-  }
-  console.log(attendance)
+// export function mapAttendance(data: any) {
+//   let attendance: Attendance
+//   attendance = {
+//     id: data.id,
+//     employee: data.employee,
+//     loginDateTime: new Date(data.loginDateTime).getTime(),
+//     loginDescription: data.loginDescription,
+//     logoutDateTime: new Date(data.logoutDateTime).getTime(),
+//     logoutDescription: data.logoutDescription,
+//     remark: data.remark,
+//   }
+//   console.log(attendance)
 
-  return attendance as any
-}
+//   return attendance as any
+// }

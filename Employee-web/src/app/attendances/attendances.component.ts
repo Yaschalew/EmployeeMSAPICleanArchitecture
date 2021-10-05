@@ -8,6 +8,7 @@ import { Employee } from '../models/employees.model';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 // Custom
 
@@ -21,21 +22,24 @@ import { Router } from '@angular/router';
 })
 export class AttendancesComponent implements OnInit {
 
+
+
   displayedColumns: string[] = ['no', 'employee', 'loginTime', 'logoutTime', 'loginDescription', 'loginDescription', 'remark', 'action'];
   dataSource: any;
-  attendances: any[] = [];
-  employees: any = []
+  attendances: Attendance[] = [];
+  employees: any[] = []
   id: any;
+
   constructor(
     public dialog: MatDialog,
     private router: Router,
     private attendanceService: AttendanceService
   ) {
-    let date = new Date(2021, 8, 30)
-    let date1 = new Date(date.toString())
-    // date.setMonth(9)
-    // date.setDate(30)
-    console.log(date1.toString())
+    // let date: Date
+    // date = new Date(2021, 8, 30, 9, 0, 0, 0)
+    // console.log(date,' => ', date.getTime())
+    // date = new Date(2021, 8, 30, 18, 0, 0, 0)
+    // console.log(date,' => ', date.getTime())
     this.attendanceService.getAll()
       .subscribe((data: any) => {
         console.log('Attendances')
@@ -51,13 +55,17 @@ export class AttendancesComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   openDialog(id: any) {
 
   }
 
-  getEmployeeName(employeeId: any) {
+  getDate(time: number): Date{
+    return new Date(time)
+  }
+
+  getEmployeeName(employeeId: number) {
     // return 'XYZ'
     return this.attendanceService.getEmployeeName(employeeId)
   }

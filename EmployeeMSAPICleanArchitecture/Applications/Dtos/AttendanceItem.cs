@@ -5,7 +5,7 @@ namespace Applications.Dtos
     public class AttendanceItem
     {
         public Guid ID { get; set; }
-        public Guid Employee { get; set; }
+        public Guid EmployeeId { get; set; }
         public DateTime LoginTime { get; set; }
         // This is the reason if not login late
         // Requested if not on time

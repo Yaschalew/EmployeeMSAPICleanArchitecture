@@ -15,7 +15,7 @@ namespace Applications.Mappings
             return new AttendanceItem
             {
                 ID = attendance.ID,
-                Employee = attendance.Employee,
+                EmployeeId = attendance.EmployeeId,
                 LoginTime = attendance.LoginTime,
                 LoginDescription = attendance.LoginDescription,
                 LogoutTime = attendance.LogoutTime,
@@ -28,7 +28,7 @@ namespace Applications.Mappings
             return new Attendance
             {
                 ID = attendance.ID,
-                Employee = attendance.Employee,
+                EmployeeId = attendance.EmployeeId,
                 LoginTime = attendance.LoginTime,
                 LoginDescription = attendance.LoginDescription,
                 LogoutTime = attendance.LogoutTime,
