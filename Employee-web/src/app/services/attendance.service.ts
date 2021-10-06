@@ -88,7 +88,7 @@ export class AttendanceService {
   }
 
   // @TransformDate
-  edit(attendance: any, id: number): Observable<Attendance> {
+  edit(attendance: any, id?: number): Observable<Attendance> {
     return this._http.put<Attendance>(
       this.url,
       JSON.stringify(attendance),

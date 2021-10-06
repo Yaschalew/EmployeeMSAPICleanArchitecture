@@ -1,19 +1,9 @@
-// External
-
 import { Component, OnInit } from '@angular/core';
 
 import { Attendance } from '../models/attendance.model';
 import { AttendanceService } from './../services/attendance.service';
-import { Employee } from '../models/employees.model';
 import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { map } from 'rxjs/operators';
-
-// Custom
-
-
-
 
 @Component({
   selector: 'app-attendances',
@@ -27,14 +17,22 @@ export class AttendancesComponent implements OnInit {
   displayedColumns: string[] = ['no', 'employee', 'loginTime', 'logoutTime', 'loginDescription', 'loginDescription', 'remark', 'action'];
   dataSource: any;
   attendances: Attendance[] = [];
+  // $attendances: Observable<AttendanceState>
   employees: any[] = []
   id: any;
 
   constructor(
     public dialog: MatDialog,
     private router: Router,
-    private attendanceService: AttendanceService
+    private attendanceService: AttendanceService,
+    // private _attendanceStateService: AttendanceStateService
   ) {
+
+    // this.$attendances = this._attendanceStateService.state$
+
+    // this.$attendances.subscribe((response: any) => {
+    //   console.log(response)
+    // })
     // let date: Date
     // date = new Date(2021, 8, 30, 9, 0, 0, 0)
     // console.log(date,' => ', date.getTime())
