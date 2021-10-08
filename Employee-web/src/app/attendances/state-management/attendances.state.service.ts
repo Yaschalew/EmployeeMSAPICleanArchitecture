@@ -1,17 +1,26 @@
+import { AttendanceMapper, AttendanceModel } from './../../models/attendance.model';
 import { BehaviorSubject, Observable } from "rxjs";
-import { distinctUntilChanged, map } from "rxjs/operators";
+import { distinctUntilChanged, filter, map } from 'rxjs/operators';
 
-import { Attendance } from "src/app/models/attendance.model";
 import { AttendanceService } from "src/app/services/attendance.service";
+import { EmployeeNameModel } from "src/app/models/employees.model";
 import { Injectable } from "@angular/core";
 
-export interface AttendanceState{
-  collections: Attendance[];
-  selectedItemId: number;
+// Attendance State Management
+
+export interface AttendanceNewState {
+  item: AttendanceModel,
+  isEmpty: boolean
+}
+
+export interface AttendanceState {
+  collections: AttendanceModel[];
+  new: AttendanceModel
+  selectedItemId: number | undefined;
   filter: Filter;
 }
 
-export interface Filter{
+export interface Filter {
   search: number
 }
 
@@ -20,9 +29,18 @@ export interface Filter{
 })
 export class AttendanceStateService {
 
+  // Existing Attendances
   // BASIC PARTS OF A STATE SERVICE
 
-  private readonly _state$: BehaviorSubject<AttendanceState> = {} as BehaviorSubject<AttendanceState>
+  private readonly _state$: BehaviorSubject<AttendanceState>
+    = new BehaviorSubject<AttendanceState>(
+      {
+        collections: [],
+        new: {} as AttendanceModel,
+        selectedItemId: undefined,
+        filter: { search: 0 }
+      }
+    )
 
   private get state(): AttendanceState {
     return this._state$.getValue()
@@ -35,7 +53,7 @@ export class AttendanceStateService {
     })
   }
 
-  private selectAll(): Observable<Attendance[]> {
+  private selectAll(): Observable<AttendanceModel[]> {
     return this._state$.asObservable().pipe(
       map((state: AttendanceState) => {
         return state.collections
@@ -44,33 +62,45 @@ export class AttendanceStateService {
     );
   }
 
-  private selectById(id: number): Observable<Attendance> {
+  private selectById(id?: number): Observable<AttendanceModel> {
     return this._state$.asObservable().pipe(
       map((state: AttendanceState) => {
-        let attendance: Attendance = {} as Attendance
-        if(id > 0){
+        if (id === undefined) {
+          id = state.selectedItemId
+        }
+        let attendance: AttendanceModel = {} as AttendanceModel
+        if (id !== undefined) {
           for (let i = 0; i < state.collections.length; i++) {
-            if(state.collections[i].id === id){
+            if (state.collections[i].id === id) {
               attendance = state.collections[i]
               break
             }
           }
+          console.log('Attendance Selected')
+          console.log(this.state.selectedItemId)
+          console.log(attendance)
+          return attendance
         }
-        return attendance
+        else {
+          console.log('Attendance Selected New')
+          console.log(this.state.selectedItemId)
+          console.log(state.new)
+          return state.new
+        }
       }),
       distinctUntilChanged()
     );
   }
 
-  private selectByEmployee(id: number): Observable<Attendance[]> {
+  private selectByEmployee(id: number): Observable<AttendanceModel[]> {
     return this._state$.asObservable().pipe(
       map((state: AttendanceState) => {
-        let attendances: Attendance[] = []
-        if(id <= 0){
+        let attendances: AttendanceModel[] = []
+        if (id <= 0) {
           return state.collections
         }
         for (let i = 0; i < state.collections.length; i++) {
-          if(state.collections[i].employee === id){
+          if (state.collections[i].employee === id) {
             attendances = [...attendances, state.collections[i]]
           }
         }
@@ -83,6 +113,7 @@ export class AttendanceStateService {
   load() {
     this._attendanceService.getAll()
       .subscribe((response: any) => {
+        console.log(response)
         this.state = { collections: response }
       })
   }
@@ -90,73 +121,100 @@ export class AttendanceStateService {
   constructor(
     private _attendanceService: AttendanceService
   ) {
-    this._state$ = new BehaviorSubject<AttendanceState>(
-      {
-        collections: [],
-        selectedItemId: 0,
-        filter: { search: 0 } as Filter
-      } as AttendanceState
-    );
     this.load()
+    console.log(this.state)
   }
 
   // OBSERVABLE PARTS OF A STATE SERVICE
 
   readonly $attendances = this.selectAll()
-  readonly $selectedAttendance = this.selectById(this.state.selectedItemId)
+  readonly $selectedAttendance = this.selectById()
   readonly $filteredAttendances = this.selectByEmployee(this.state.filter.search)
+  readonly $newAttendance = this.selectById()
 
 
   // Configure Selected Item
   clearSelected() {
-    this.state = { selectedItemId: 0 }
+    this.state = { selectedItemId: undefined }
   }
 
   selectAttendance(id: number) {
     this.state = { selectedItemId: id }
+    console.log('Attendance ID Selected')
+    console.log(this.state.selectedItemId)
   }
 
   // Configure Filter
   updateFilter(id: number) {
-    this.state = { filter: {search: id} as Filter}
+    this.state = { filter: { search: id } as Filter }
   }
 
   clearFilter() {
-    this.state = { filter: {search: 0} as Filter}
+    this.state = { filter: { search: 0 } as Filter }
   }
 
-  // // Add new
-  // create(attendance: Attendance) {
-  //   this._attendanceService.create(attendance)
-  //     .subscribe((response: Attendance) => {
-  //       attendance = response
-  //     })
-  //   let oldState: AttendanceState = this.state
-  //   this.state = {
-  //     collections: [...oldState.collections, attendance],
-  //     selectedItemId: attendance.id
-  //   }
-  // }
+  // Data Modifications
 
-  // edit(attendance: Attendance) {
-  //   this._attendanceService.edit(attendance, attendance.id)
-  //     .subscribe((response: Attendance) => {
-  //       attendance = response
-  //     })
-  //   let oldState: AttendanceState = this.state
-  //   this.state = {
-  //     collections: [...oldState.collections.filter((item: Attendance) => item.id !== attendance.id), attendance],
-  //     selectedItemId: attendance.id
-  //   }
-  // }
+  // To the API service
+
+  // Add new
+  private _create(attendance: AttendanceModel): AttendanceModel {
+    this._attendanceService.create(attendance)
+      .subscribe((response: AttendanceModel) => {
+        attendance = response
+      })
+    return attendance
+  }
+  // Add new
+  private _edit(attendance: AttendanceModel): AttendanceModel {
+    this._attendanceService.edit(attendance)
+      .subscribe((response: AttendanceModel) => {
+        attendance = response
+      })
+    return attendance
+  }
+
+  create() {
+    let attendance = this.state.new
+    this._attendanceService.create(attendance)
+      .subscribe((response: AttendanceModel) => {
+        attendance = response
+      })
+    this.selectAll().subscribe((attendances: AttendanceModel[]) => {
+      this.state = {
+        collections: [...attendances, attendance],
+        selectedItemId: attendance.id,
+        new: {} as AttendanceModel
+      }
+    })
+  }
+
+  edit(attendance: AttendanceModel) {
+    if (!attendance.id || this.state.selectedItemId !== attendance.id) {
+      let err = 'The id of the attendance is tampered with!'
+      window.alert(err)
+      throw Error(err)
+    }
+    if (attendance.id) {
+      this._attendanceService.edit(attendance)
+        .subscribe((response: AttendanceModel) => {
+          attendance = response
+        })
+    }
+    let oldState: AttendanceState = this.state
+    this.state = {
+      collections: [...oldState.collections.filter((item: AttendanceModel) => item.id !== attendance.id), attendance],
+      selectedItemId: attendance.id
+    }
+  }
 
   // erase(id: number){
   //   let oldState: AttendanceState = this.state
   //   this._attendanceService.erase(attendance.id.toString())
-  //   .subscribe((response: Attendance) => {
+  //   .subscribe((response: AttendanceModel) => {
   //     attendance = response
   //   })
-  //   let attendance: Attendance = th
+  //   let attendance: AttendanceModel = th
   // }
 
 }

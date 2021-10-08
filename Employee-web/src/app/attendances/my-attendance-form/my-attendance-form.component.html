@@ -1,0 +1,157 @@
+<!-- <ng-container *ngIf="($attendance | async) && $attendance | async as item">
+  <table>
+    <tr>
+      <td>Employee</td>
+      <td>
+        <select [(ngModel)]="item.employee" name="employee" class="input">
+          <ng-container *ngFor="let eachEmployee of employees | async">
+            <option value="{{eachEmployee.id}}">{{eachEmployee.name}}</option>
+          </ng-container>
+        </select>
+      </td>
+    </tr>
+    <ng-container class="login-container">
+      <h3>Login</h3>
+      <tr>
+        <td>DateTime</td>
+        <td>
+          <input [(ngModel)]="item.loginDateTime" class="input">
+        </td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>
+          <input [(ngModel)]="item.loginDescription" class="input">
+        </td>
+      </tr>
+    </ng-container>
+    <ng-container class="logout-container" class="input">
+      <h3>
+
+        Logout
+      </h3>
+      <tr>
+        <td>DateTime</td>
+        <td>
+          <input [(ngModel)]="item.logoutDateTime" class="input">
+        </td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>
+          <input [(ngModel)]="item.logoutDescription" class="input">
+        </td>
+      </tr>
+    </ng-container>
+    <tr>
+      <td>Remark</td>
+      <td>
+        <input [(ngModel)]="item.remark" class="input">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button name="Submit" (click)="onSubmit()"
+        style="height: 35px; width: 100px; background-color: green; color: black;"></button>
+      </td>
+    </tr>
+  </table>
+
+</ng-container> -->
+<!-- <form [formGroup]="attendanceForm" (onsubmit)="onSubmit()">
+  <table>
+    <tr>
+      <mat-form-field>
+        <mat-label>Employee</mat-label>
+        <mat-select formControlName="employee" placeholder="select employee name">
+          <ng-container *ngFor="let eachEmployee of employees | async">
+            <mat-option value="{{eachEmployee.id}}">{{eachEmployee.name}}</mat-option>
+          </ng-container>
+        </mat-select>
+      </mat-form-field>
+    </tr>
+    <ng-container formGroupName="login" class="login-container" class="input">
+      <h3>Login</h3>
+      <tr>
+        <mat-form-field style="width: 280px">
+          <mat-label>DateTime</mat-label>
+          <textarea matInput formControlName="loginDateTime" placeholder="enter date and time"></textarea>
+        </mat-form-field>
+      </tr>
+      <tr>
+        <mat-form-field style="width: 280px">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="loginDescription" placeholder="enter description"></textarea>
+        </mat-form-field>
+      </tr>
+    </ng-container>
+    <ng-container formGroupName="logout" class="logout-container" class="input">
+      <h3>Logout</h3>
+      <tr>
+        <mat-form-field style="width: 280px">
+          <mat-label>DateTime</mat-label>
+          <textarea matInput formControlName="logoutDateTime" placeholder="enter date and time"></textarea>
+        </mat-form-field>
+      </tr>
+      <tr>
+        <mat-form-field style="width: 280px">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="logoutDescription" placeholder="enter description"></textarea>
+        </mat-form-field>
+      </tr>
+    </ng-container>
+    <tr>
+      <mat-form-field style="width: 280px">
+        <mat-label>Remark</mat-label>
+        <textarea matInput formControlName="remark" placeholder="enter remark"></textarea>
+      </mat-form-field>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <input type="submit" value="Submit">
+      </td>
+    </tr>
+  </table>
+</form> -->
+<form (ngSubmit)="onSubmit()">
+  <ng-container *ngIf="($attendance | async) && $attendance | async as item">
+    <mat-form-field>
+      <mat-label>Employee</mat-label>
+      <mat-select [(value)]="item.employee" placeholder="select employee name">
+        <ng-container *ngFor="let eachEmployee of employees | async">
+          <mat-option [value]="eachEmployee.id">{{eachEmployee.name}}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+    <ng-container class="login-container">
+      <h3>Login</h3>
+      <mat-form-field style="width: 280px">
+        <mat-label>DateTime</mat-label>
+        <textarea matInput [(ngModel)]="item.loginDateTime" placeholder="enter date and time"></textarea>
+      </mat-form-field>
+      <mat-form-field style="width: 280px">
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]="item.loginDescription" placeholder="enter description"></textarea>
+      </mat-form-field>
+    </ng-container>
+    <ng-container class="login-container">
+      <h3>Logout</h3>
+      <mat-form-field style="width: 280px">
+        <mat-label>DateTime</mat-label>
+        <textarea matInput [(ngModel)]="item.logoutDateTime" placeholder="enter date and time"></textarea>
+      </mat-form-field>
+      <mat-form-field style="width: 280px">
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]="item.logoutDescription" placeholder="enter description"></textarea>
+      </mat-form-field>
+    </ng-container>
+    <mat-form-field style="width: 280px">
+      <mat-label>Remark</mat-label>
+      <textarea matInput [(ngModel)]="item.remark" placeholder="enter description"></textarea>
+    </mat-form-field>
+
+  </ng-container>
+  <br>
+  <button name="Submit" (click)="onSubmit()"
+      style="height: 35px; width: 100px; background-color: green; color: black;"></button>
+</form>

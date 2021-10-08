@@ -1,12 +1,14 @@
 import * as moment from 'moment';
 
+import { AttendanceDto, AttendanceModel } from './../models/attendance.model';
+import { Employee, EmployeeNameModel } from '../models/employees.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, filter, map } from 'rxjs/operators';
 
-import { Attendance } from '../models/attendance.model';
-import { Employee } from '../models/employees.model';
+import { AttendanceMapper } from '../models/attendance.model';
+import { CustomError } from './error.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 const isDate = (s: any) => moment(s, moment.ISO_8601, true).isValid();
 
@@ -29,7 +31,7 @@ export function TransformDate(target: any, key: any, descriptor: any) {
 @Injectable({
   providedIn: 'root'
 })
-export class AttendanceService {
+export class AttendanceService extends CustomError {
 
   employees: Employee[] = []
 
@@ -43,6 +45,7 @@ export class AttendanceService {
   }
 
   constructor(private _http: HttpClient) {
+    super('Attendance')
     this.getEmployees()
       .subscribe((data: any) => {
         this.employees = data
@@ -53,95 +56,110 @@ export class AttendanceService {
     return this._http.get<Employee[]>(this.url1)
   }
 
-  //@TransformDate
-  getAll(): Observable<Attendance> {
-    return this._http.get<Attendance>(this.url)
-      // .pipe(
-      //   map((data: any) => {
-      //     console.log(data)
-      //     let dataArray: Attendance[] = []
-      //     let i = 0;
-      //     while (data[i.toString()] != null) {
-      //       dataArray = [...dataArray, data[i.toString()]]
-      //       i += 1
-      //     }
-      //     console.log(dataArray)
-      //     return dataArray
-      //   })
-      // )
-
+  private _getNew(): AttendanceDto {
+    let attendanceDto: AttendanceDto = {} as AttendanceDto
+    this._http.get<AttendanceDto[]>(this.url)
+      .subscribe((response: AttendanceDto[]) => {
+        for (let i = 0; i < response.length; i++) {
+          if (response[i].entry) {
+            response[i].entry = false
+            attendanceDto = response[i]
+            this._http.put<AttendanceDto>(
+              this.url,
+              JSON.stringify(attendanceDto),
+              this.httpOptions
+            ).subscribe()
+            break
+          }
+        }
+      })
+    return attendanceDto
   }
 
-  // @TransformDate
-  getById(id: number): Observable<Attendance> {
-    return this._http.get<Attendance>(this.url + "/" + id)
-
+  getAll(): Observable<AttendanceModel[]> {
+    return this._http.get<AttendanceDto[]>(this.url)
+      .pipe(
+        map((response: AttendanceDto[]) => {
+          let attendanceModels: AttendanceModel[] = []
+          for (let i = 0; i < response.length; i++) {
+            attendanceModels = [...attendanceModels, AttendanceMapper.toModel(response[i])]
+          }
+          return attendanceModels
+        })
+      )
   }
 
-  // @TransformDate
-  create(attendance: any): Observable<Attendance> {
-    return this._http.post<Attendance>(
+  getById(id: number): Observable<AttendanceModel> {
+    return this._http.get<AttendanceDto>(this.url + "/" + id)
+      .pipe(
+        map((attendanceDto: AttendanceDto) => {
+          return attendanceDto.toModel()
+        })
+      )
+  }
+
+  create(attendance: AttendanceModel): Observable<AttendanceModel> {
+    return this._http.post<AttendanceModel>(
       this.url,
       JSON.stringify(attendance),
       this.httpOptions
-    );
+    )
+      .pipe(
+        catchError((err: Error) => {
+          let err_str: string = "Delete Operation Failed!"
+          window.alert(err_str + " => " + err.message)
+          throw Error(err_str)
+        }),
+        map(() => {
+          return this._getNew().toModel()
+        })
+      )
   }
 
-  // @TransformDate
-  edit(attendance: any, id?: number): Observable<Attendance> {
-    return this._http.put<Attendance>(
+  edit(attendance: AttendanceModel): Observable<AttendanceModel> {
+    return this._http.put<AttendanceDto>(
       this.url,
       JSON.stringify(attendance),
       this.httpOptions
-    );
+    )
+      .pipe(
+        map(() => {
+          return attendance
+        })
+      )
   }
 
   // @TransformDate
-  erase(id: string) {
-    return this._http.delete<Attendance>(this.url + "/" + id, this.httpOptions);
+  erase(id: number): string {
+    let result: string = ''
+    this._http.delete(this.url + "/" + id, this.httpOptions)
+      .pipe(
+        map((reponse: any) => {
+          return 'Successfully Deleted!'
+        }),
+        catchError((err: Error) => {
+          let err_str: string = "Delete Operation Failed!"
+          window.alert(err_str + " => " + err.message)
+          throw Error(err_str)
+        })
+      )
+      .subscribe((response: string) => {
+        result = response
+      })
+    return result
   }
 
-  // private convertToEmployee(data: any) {
-  //   let response: Employee[] = []
-  //   for (let i = 0; i < data.length; i++) {
-  //     let newItem: Employee = data[i]
-  //     response = [...response, newItem]
-  //   }
-  //   return response
-  // }
-  // private convertToAttendance(data: any) {
-  //   let response: Attendance[] = []
-  //   for (let i = 0; i < data.length; i++) {
-  //     let newItem: Attendance = data[i]
-  //     response = [...response, newItem]
-  //   }
-  //   return response
-  // }
-
-  private convertTo<T>(data: any) {
-    let response: T = data
-    // if (data.loginDateTime === null
-    //   || data.loginDateTime === undefined
-    //   || data.loginDateTime === '') {
-    //   console.log('Attendance')
-    //   response = mapAttendance(data)
-    // }
-    // else {
-    //   response = data
-    // }
-
-    return response
-  }
-
-  private convertArrayTo<T>(data: any) {
-    let response: T[] = []
-    for (let i = 0; i < data.length; i++) {
-      response = [...response, this.convertTo<T>(data[i])]
-    }
-    return response
+  getEmployeesName(): EmployeeNameModel[] {
+    return this.employees.map((employee: Employee) => {
+      return {
+        id: employee.id,
+        name: employee.fname + ' ' + employee.mname + ' ' + employee.lname
+      } as EmployeeNameModel
+    })
   }
 
   getEmployeeName(id: number) {
+    console.log(id)
     for (let i = 0; i < this.employees.length; i++) {
       if (this.employees[i].id == id) {
         return this.employees[i].fname + ' ' + this.employees[i].mname + ' ' + this.employees[i].lname

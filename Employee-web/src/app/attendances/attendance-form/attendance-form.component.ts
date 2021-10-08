@@ -1,10 +1,11 @@
+import { Attendance, AttendanceModel } from 'src/app/models/attendance.model';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
-import { Attendance } from 'src/app/models/attendance.model';
 import { AttendanceService } from './../../services/attendance.service';
 import { DatePipe } from '@angular/common';
 import { Employee } from 'src/app/models/employees.model';
+import { Observable } from 'rxjs';
 
 // import {EventEmitter} from 'events';
 
@@ -15,12 +16,11 @@ import { Employee } from 'src/app/models/employees.model';
 })
 export class AttendanceFormComponent implements OnInit {
 
-  @Output() reply = new EventEmitter<Attendance>()
+  @Output() reply = new EventEmitter<AttendanceModel>()
 
-  @Input() attendance: Attendance | undefined
+  @Input() attendance: AttendanceModel | undefined
 
   employees: Employee[] = []
-  loginDateTime: Date | undefined
 
   forms: FormGroup;
 
@@ -48,23 +48,18 @@ export class AttendanceFormComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.attendance)
-
     if(this.attendance !== undefined){
-      this.loginDateTime = new Date(this.attendance.loginDateTime)
-      let login = new Date(this.attendance.loginDateTime)
-
-      let logout = new Date(this.attendance.logoutDateTime)
       this.forms = this._fb.group({
         employee: this._attendanceService.getEmployeeName(this.attendance.employee),
-        loginDate: new Date(login.getFullYear(), login.getMonth(), login.getDate()),
-        loginHour: login.getHours(),
-        loginMinute: login.getMinutes(),
+        loginDate: this.attendance.loginDateTime,
+        loginHour: this.attendance.loginDateTime.getHours(),
+        loginMinute: this.attendance.loginDateTime.getMinutes(),
         loginDescription: this.attendance.loginDescription,
-        logoutDate: '',
-        logoutHour: '',
-        logoutMinute: '',
-        logoutDescription: '',
-        remark: ''
+        logoutDate: this.attendance.logoutDateTime,
+        logoutHour: this.attendance.logoutDateTime.getHours(),
+        logoutMinute: this.attendance.logoutDateTime.getMinutes(),
+        logoutDescription: this.attendance.logoutDescription,
+        remark: this.attendance.remark
       })
     }
 

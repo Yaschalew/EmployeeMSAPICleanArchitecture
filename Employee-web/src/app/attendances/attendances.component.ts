@@ -1,9 +1,57 @@
+import { BehaviorSubject, Observable, Subscription, of } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
-import { Attendance } from '../models/attendance.model';
+import { AttendanceModel } from './../models/attendance.model';
 import { AttendanceService } from './../services/attendance.service';
-import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { AttendanceStateService } from './state-management/attendances.state.service';
+
+// import { catchError, delay, finalize } from 'rxjs/operators';
+
+
+
+
+// import { DataSource } from '@angular/cdk/table';
+
+// export class AttendanceDataSource extends DataSource<AttendanceModel>{
+
+//   private attendanceSubject = new BehaviorSubject<AttendanceModel[]>([])
+//   private loadingSubject = new BehaviorSubject<boolean>(false)
+//   private loading1Subject = new BehaviorSubject<boolean>(true)
+
+//   public loading$ = this.loadingSubject.asObservable()
+//   public loading1$ = this.loading1Subject.asObservable()
+
+//   constructor(private _attendancesService: AttendanceService) {
+//     super();
+//   }
+
+//   connect(){
+//     return this.attendanceSubject.asObservable()
+//   }
+
+//   disconnect(){
+//     this.attendanceSubject.complete()
+//     this.loadingSubject.complete()
+//   }
+
+//   load(){
+//     this.loadingSubject.next(true)
+//     this.loading1Subject.next(false)
+//     this._attendancesService.getAll()
+//     .pipe(
+//       catchError(() => of([])),
+//       delay(3000),
+//       finalize(() => {
+//         this.loadingSubject.next(false)
+//         this.loading1Subject.next(true)
+//       })
+//     )
+//     .subscribe(attendances => {
+//       // console.log(attendances)
+//       this.attendanceSubject.next(attendances)
+//     })
+//   }
+// }
 
 @Component({
   selector: 'app-attendances',
@@ -12,83 +60,22 @@ import { Router } from '@angular/router';
 })
 export class AttendancesComponent implements OnInit {
 
-
-
   displayedColumns: string[] = ['no', 'employee', 'loginTime', 'logoutTime', 'loginDescription', 'loginDescription', 'remark', 'action'];
-  dataSource: any;
-  attendances: Attendance[] = [];
-  // $attendances: Observable<AttendanceState>
-  employees: any[] = []
-  id: any;
+  dataSource: Observable<AttendanceModel[]>
 
   constructor(
-    public dialog: MatDialog,
-    private router: Router,
-    private attendanceService: AttendanceService,
-    // private _attendanceStateService: AttendanceStateService
+    private _attendanceStateService: AttendanceStateService,
+     private _attendanceService: AttendanceService
   ) {
-
-    // this.$attendances = this._attendanceStateService.state$
-
-    // this.$attendances.subscribe((response: any) => {
-    //   console.log(response)
-    // })
-    // let date: Date
-    // date = new Date(2021, 8, 30, 9, 0, 0, 0)
-    // console.log(date,' => ', date.getTime())
-    // date = new Date(2021, 8, 30, 18, 0, 0, 0)
-    // console.log(date,' => ', date.getTime())
-    this.attendanceService.getAll()
-      .subscribe((data: any) => {
-        console.log('Attendances')
-        this.attendances = data
-        console.log(this.attendances)
-      });
-    this.attendanceService.getEmployees()
-      .subscribe((data) => {
-        console.log('Employees')
-        this.employees = data
-        console.log(this.employees)
-      });
-
+    this.dataSource = this._attendanceStateService.$filteredAttendances
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
-  openDialog(id: any) {
-
-  }
-
-  getDate(time: number): Date{
-    return new Date(time)
-  }
+  openDialog(id: any) {}
 
   getEmployeeName(employeeId: number) {
-    // return 'XYZ'
-    return this.attendanceService.getEmployeeName(employeeId)
+    return this._attendanceService.getEmployeeName(employeeId)
   }
-
-
-  // openDialog(id:string): void {
-  //   const dialogRef = this.dialog.open(EmployeeDeleteComponent, {
-  //     width: '250px',
-  //     data: {id:id}
-  //   });
-  //   this.id=id;
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log('The dialog was closed');
-  //     if(result){
-  //       this._employees.deleteEmployee(this.id).subscribe(data=>{
-  //         location.reload();
-  //         console.log(data);
-
-  //       })
-  //       this._snackBar.open("Employee is deleted.","Ok");
-  //       location.reload();
-  //     }
-
-  //    // this.animal = result;
-  //   });
-  // }
-
 }
+

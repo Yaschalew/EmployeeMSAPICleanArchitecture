@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
-import { Attendance } from '../../models/attendance.model';
+import { AttendanceModel } from '../../models/attendance.model';
 import { AttendanceService } from '../../services/attendance.service';
+import { AttendanceStateService } from '../state-management/attendances.state.service';
 
 @Component({
   selector: 'app-attendance-edit',
@@ -11,9 +12,10 @@ import { AttendanceService } from '../../services/attendance.service';
 })
 export class AttendanceEditComponent implements OnInit {
 
-  attendance: Attendance | undefined
+  attendance: AttendanceModel | undefined
   constructor(
     private _attendanceService: AttendanceService,
+    private _attendanceStateService: AttendanceStateService,
     private _route: ActivatedRoute,
   ) {
     var id_str: string| null =  this._route.snapshot.paramMap.get('id')
@@ -21,16 +23,14 @@ export class AttendanceEditComponent implements OnInit {
       id_str = "0"
     }
     let id: number = +id_str
-    console.log(id)
-    this._attendanceService.getById(id)
-    .subscribe((data:any)=>{
-      console.log(data)
-      this.attendance = data
-    });
-    // console.log(this.attendance)
+    this._attendanceStateService.selectAttendance(id)
   }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(event: AttendanceModel){
+
   }
 
 }
