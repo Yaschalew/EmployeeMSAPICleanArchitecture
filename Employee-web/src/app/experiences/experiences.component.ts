@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { DeleteeducationComponent } from '../educations/deleteeducation/deleteeducation.component';
 import { ExperienceService } from '../services/experiences/experience.service';
+import { ExperiencepopupComponent } from './experiencepopup/experiencepopup.component';
 import { ExperiencesDeleteComponent } from './experiences-delete/experiences-delete.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -53,4 +54,20 @@ displayedColumns: string[] = ['EmployeId', 'Salary', 'Position','Company','Year'
     });
 
   }
+  onCreate()
+  {
+
+
+    const dialogRef = this.dialog.open(ExperiencepopupComponent, {
+      width: '40%',
+      height: '60%',
+
+    });
+   dialogRef.disableClose=true;
+
+
+  }
+
+
+
 }

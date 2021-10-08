@@ -4,6 +4,11 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { EducationService } from 'src/app/services/educations/education.service';
 import { Router } from '@angular/router';
 
+//import { window, windowCount } from 'rxjs/operators';
+
+
+
+
 @Component({
   selector: 'app-addpopup',
   templateUrl: './addpopup.component.html',
@@ -33,7 +38,7 @@ export class AddpopupComponent implements OnInit {
   {
     this._educations.addEducation(this.forms.value).subscribe(data=>
       {
-        this.router.navigateByUrl("educations");
+        window.location.reload();
       });
   }
 
