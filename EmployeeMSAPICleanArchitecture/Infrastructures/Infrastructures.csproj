@@ -16,6 +16,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
     <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="5.0.10" />
+    <PackageReference Include="NPOI" Version="2.5.4" />
   </ItemGroup>
 
   <ItemGroup>

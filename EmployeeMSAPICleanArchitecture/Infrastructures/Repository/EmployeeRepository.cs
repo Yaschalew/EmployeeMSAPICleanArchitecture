@@ -1,15 +1,18 @@
-﻿using Infrastructures.Context;
+﻿using Applications.Mapping;
+using Infrastructures.Context;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Models.Entities;
 using Models.Interface;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Infrastructures.Repository
 {
-    public class EmployeeRepository : IEmployee
+    public class EmployeeRepository : IEmployee<Employee>
     {
         private readonly AppDbContext _context;
         private UserManager<IdentityUser> _userManager;
@@ -47,21 +50,19 @@ namespace Infrastructures.Repository
             
         }
 
+        public async Task<IEnumerable<Employee>> GetWithPredicateAsync(Expression<Func<Employee, bool>> predicate, int pageIndex, int pageSize)
+        {
+            return predicate == null ? (await _context.Employees.Skip(pageIndex * pageSize).Take(pageSize).ToListAsync())
+              : (await _context.Employees.Where(predicate).Skip(pageIndex * pageSize).Take(pageSize).ToListAsync());
+        }
+
         public Employee UpdateEmployee(Guid id, Employee employee)
         {
             var existEmployee = _context.Employees.Find(id);
 
-           existEmployee.FName = employee.FName;
-           existEmployee.LName = employee.LName;
-           existEmployee.MName = employee.MName;
-           existEmployee.Phone = employee.Phone;
-           existEmployee.Email = employee.Email;
-           existEmployee.BirtDate = employee.BirtDate;
-           existEmployee.Address = employee.Address;
-           existEmployee.HiredAt = employee.HiredAt;
-            existEmployee.Status = employee.Status;
+            existEmployee = existEmployee.ToEmployee();
             existEmployee.UpdatedAt = DateTime.Now;
-            _context.Entry(existEmployee).State = EntityState.Modified;
+            _context.Employees.Update(existEmployee);
             _context.SaveChanges();
             return existEmployee;
         }

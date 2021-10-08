@@ -1,5 +1,8 @@
-﻿using Applications.Interfaces;
+﻿using Applications.Dtos.Response;
+using Applications.Interfaces;
+using Applications.Mapping;
 using Applications.ViewModels;
+using LinqKit;
 using Models.Entities;
 using Models.Interface;
 using System;
@@ -12,8 +15,8 @@ namespace Applications.Services
 {
     public class EmployeeService : IemployeeService
     {
-        private readonly IEmployee _iEmployee;
-        public EmployeeService(IEmployee iEmployee)
+        private  IEmployee<Employee> _iEmployee;
+        public EmployeeService(IEmployee<Employee> iEmployee)
         {
             _iEmployee = iEmployee;
         }
@@ -65,6 +68,48 @@ namespace Applications.Services
             employeeItem.HiredAt = employee.HiredAt;
             employeeItem.Status = employee.Status;
             return employeeItem;
+        }
+
+        public async Task<ResponseDto<EmployeeItem>> GetWithPredicate(Guid? id, string searchKey, int? pageIndex, int? pageSize)
+        {
+            int itemPerPage = pageSize ?? 2;
+            int PageIndex = pageIndex ?? 0;
+            var predicate = PredicateBuilder.True<Employee>();
+            var pr = PredicateBuilder.New<Employee>();
+            pr = string.IsNullOrEmpty(searchKey) ? null : pr.And(
+                x=>x.FName.Contains(searchKey)||
+                x.Email.Contains(searchKey)||
+                x.MName.Contains(searchKey)
+                );
+            if (id != null)
+                predicate = predicate.And(p => p.Id == id);
+            else
+                predicate = string.IsNullOrEmpty(searchKey) ? null
+                           : predicate.And
+                            (
+                                p => p.FName.Contains(searchKey) ||
+                                p.LName.Contains(searchKey) ||
+                                p.MName.Contains(searchKey)||
+                                p.Phone.Contains(searchKey) ||
+                                p.Email.Contains(searchKey)||
+                                p.Address.Contains(searchKey) ||
+                                p.Status.Contains(searchKey)
+                               
+                            );
+            int TotalRowCount= _iEmployee.GetEmployee().Count();
+            return new ResponseDto<EmployeeItem>
+                (
+                
+                    (await _iEmployee.GetWithPredicateAsync(predicate, pageIndex ?? 0, pageSize ?? 2))
+                    .Select(x => x.ToDto()
+                    ).ToList(),
+                   TotalRowCount,   //total row count
+                    itemPerPage,  // itemPerPage,
+                    PageIndex, // currentPage,
+                    PageIndex ==0? false: true,  // hasPrev,
+                     PageIndex * itemPerPage + itemPerPage<TotalRowCount? true : false,   // hasNext
+                    TotalRowCount % itemPerPage ==0? TotalRowCount / itemPerPage: TotalRowCount / itemPerPage +1
+                ) ; ; ;
         }
 
         public EmployeeItem UpdateEmployee(Guid id, EmployeeItem employeeItem)

@@ -8,6 +8,7 @@ namespace Applications.ViewModels
 {
    public class EmployeeItem
     {
+        public Guid Id { get; set; }
         public string FName { get; set; }
         public string LName { get; set; }
         public string MName { get; set; }

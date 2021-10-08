@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
  this._login.login(this.forms.value).subscribe((data:any)=>{
   console.warn(data);
   if(data.isSuccess){
+    console.log(data.message);
     this._tokenStorageService.saveToken(data.message);
     this._tokenStorageService.saveUser(data.email);
     this._tokenStorageService.isLogin(data.isSuccess);

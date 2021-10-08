@@ -1,15 +1,22 @@
 
 <div>
-
-    </div>
-
-    <div style="text-align: right; padding-right: 5%;padding-bottom: 1%; ">
-        <a mat-raised-button href="employees/add-employee" style="color: SteelBlue;;">
+    <div style="padding-right: 5%;padding-bottom: 1%; ">
+        <button mat-raised-button  (click)="openAddDialog()" style="color: SteelBlue;;">
          <span style="padding-top: 10px;">
           <mat-icon fontSet="fa"  fontIcon="fa-plus"></mat-icon>
           <span> Add Employee</span>
           </span>
-        </a>
+        </button>
+    </div>
+    <div style="text-align: right;padding-right: 10%;">
+      <form class="">
+        <mat-form-field class="rounded" appearance="fill">
+          <mat-label>Search...</mat-label>
+          <input type="tel" name="searchKey" [(ngModel)]="searchKey" (keyup)="searchEmployee()" matInput placeholder="">
+          <mat-icon *ngIf="!clearSearch" matSuffix  fontSet="fa" class="text-gray-400" fontIcon="fa-search"></mat-icon>
+          <mat-icon *ngIf="clearSearch" (click)="clearText()" matSuffix  fontSet="fa" class="text-red-300 hover:text-red-500" fontIcon="fa-times"></mat-icon>
+        </mat-form-field>
+      </form>
     </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
@@ -91,3 +98,15 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
+    <div style="padding-right: 10%; padding-top: 1%;">
+      <mat-paginator 
+      [pageSize]="pageSize"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="pageEvent = $event; onPaginateChange($event)"
+      aria-label="Select page"
+      [length]="length" 
+      [showFirstLastButtons]="true"
+      >
+</mat-paginator>
+    </div>
+</div>

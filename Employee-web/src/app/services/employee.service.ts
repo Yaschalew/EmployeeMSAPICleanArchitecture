@@ -10,8 +10,8 @@ url:string='https://localhost:5001/api/Employee';
 
 
   constructor(private _http:HttpClient) { }
-  getEmployees(){
-   return this._http.get(this.url);
+  getEmployees(id?:string,searchKey?:string, pageIndex?:number,pageSize?:number){
+   return this._http.get(this.url+ '?pageSize='+ pageSize+'&searchKey='+searchKey+'&pageindex='+pageIndex);
   }
   addEmployee(employee:any){
     return this._http.post(this.url,employee);

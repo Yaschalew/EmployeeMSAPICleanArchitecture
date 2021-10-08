@@ -61,7 +61,7 @@ namespace Infrastructures.Repository
             var identityUser = new IdentityUser
             {
                 Email = email,
-                UserName = password,
+                UserName = email,
                 Id = Id.ToString()
             };
 
