@@ -3,10 +3,6 @@ using Applications.Interfaces;
 using Domains.Entities;
 using Domains.Interface;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Applications.Services
 {
@@ -20,8 +16,8 @@ namespace Applications.Services
         public ExperienceItem AddExperience(ExperienceItem experienceItem)
         {
             Experience experience = new Experience();
-            experience.Company = experienceItem.Company;
             experience.EmployeId = experienceItem.EmployeId;
+            experience.Company = experienceItem.Company;
             experience.Position = experienceItem.Position;
             experience.Remark = experienceItem.Remark;
             experience.ResignReason = experienceItem.ResignReason;

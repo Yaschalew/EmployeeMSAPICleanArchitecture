@@ -30,7 +30,7 @@ this.id=this.route.snapshot.paramMap.get('id');
 this._educationservice.getEducationById(this.id).subscribe((data:any)=>{
   this.education=data;
   this.patchValues(data);
-  console.log(this.education.level);
+  console.log(this.education);
 });
   }
 patchValues(data: any) {

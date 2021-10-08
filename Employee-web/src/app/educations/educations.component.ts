@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AddpopupComponent } from './addpopup/addpopup.component';
 import { DeleteeducationComponent } from './deleteeducation/deleteeducation.component';
 import { EducationService } from '../services/educations/education.service';
+import { Inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatDialogConfig } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
@@ -53,6 +57,24 @@ id:any;
     });
 
   }
+  onCreate()
+  {
+    // const dialogConfig = new MatDialog();
+    // dialogConfig.disableClose = true;
+    // dialogConfig.autoFocus = true;
+    // dialogConfig.width = "60%";
+    // this.dialog.open(AddpopupComponent,dialogConfig);
+
+    const dialogRef = this.dialog.open(AddpopupComponent, {
+      width: '40%',
+      height: '60%',
+
+    });
+   dialogRef.disableClose=true;
+
+
+  }
+
 
 
 }

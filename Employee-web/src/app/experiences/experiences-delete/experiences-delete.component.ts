@@ -12,4 +12,9 @@ export class ExperiencesDeleteComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deleteEducation()
+  {
+
+  }
+
 }

@@ -10,15 +10,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructures.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210920094101_intialdb")]
-    partial class intialdb
+    [Migration("20210923064731_Inital")]
+    partial class Inital
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.9")
+                .HasAnnotation("ProductVersion", "5.0.10")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Domains.Entities.Education", b =>
@@ -59,8 +59,8 @@ namespace Infrastructures.Migrations
                     b.Property<string>("Company")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("EmployeId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("EmployeId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Position")
                         .HasColumnType("nvarchar(max)");

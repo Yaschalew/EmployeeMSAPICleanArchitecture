@@ -20,6 +20,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ExperiencepopupComponent } from './experiencepopup/experiencepopup.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ExperiencesAddComponent,
     ExperiencesDeleteComponent,
     ExperiencesDetailComponent,
-    ExperiencesEditComponent
+    ExperiencesEditComponent,
+    ExperiencepopupComponent
   ],
   imports: [
     CommonModule,

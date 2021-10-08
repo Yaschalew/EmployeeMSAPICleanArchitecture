@@ -11,7 +11,7 @@ export class DeleteeducationComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  deleteEducation()
+  deleteExperience()
   {
 
   }
